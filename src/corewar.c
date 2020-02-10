@@ -305,6 +305,20 @@ void		entry_arena(t_vm *vm)
 	}
 }
 
+void		print_cursors(t_vm *vm)
+{
+	t_cursor	*buff;
+	int			i;
+
+	i = 0;
+	buff = vm->cursors;
+	while (buff != NULL)
+	{
+		buff = buff->next;
+		i++;
+	}
+}
+
 int			main(int ac, char **av)
 {
 	t_vm	*vm;
@@ -317,10 +331,11 @@ int			main(int ac, char **av)
 		vm = init_vm();
 		parse_corewar_args(ac, av, vm);
 		entry_arena(vm);
-		//set_cursors(vm);
+		init_cursors(vm);
+		print_cursors(vm);
 		//WAR!!!!
-		print_info_for_player(vm);
-		print_arena(vm);
+		//print_info_for_player(vm);
+		//print_arena(vm);
 	}
 	return (0);
 }

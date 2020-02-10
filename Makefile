@@ -8,6 +8,7 @@ FLAGS =
 
 LIST =			corewar \
 				error \
+				init_cursors \
 
 OBJ =			$(addprefix obj/, $(addsuffix .o, $(LIST)))
 
