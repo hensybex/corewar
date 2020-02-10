@@ -1,4 +1,4 @@
-#include "corewar.h"
+#include "../includes/corewar.h"
 
 void	error(char *str)
 {

@@ -1,4 +1,4 @@
-#include "corewar.h"
+#include "../includes/corewar.h"
 #include <stdio.h>
 
 t_vm		*init_vm(void)
