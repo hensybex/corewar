@@ -217,8 +217,10 @@ void		parse_champion_filename(int *ac, char ***av, t_vm *vm, t_player **list)
 
 	id = 0;
 	// обработка флага n
+
 	if (is_cor(**av))
 	{
+		//printf("%s %d\n", (**av), *ac);
 		add_player(list, parse_champion(**av, id));
 		vm->players_num++;
 		(*ac)--;
@@ -232,9 +234,12 @@ void		parse_corewar_args(int ac, char **av, t_vm *vm)
 
 	list = NULL;
 	// считывание флагов
-	if (is_cor(*av))
+	while (ac >= 1)
 	{
-		parse_champion_filename(&ac, &av, vm, &list);
+		if (is_cor(*av))
+		{
+			parse_champion_filename(&ac, &av, vm, &list);
+		}
 	}
 	set_players(vm, list);
 }
@@ -246,6 +251,7 @@ void		print_info_for_player(t_vm *vm)
 	int32_t		j;
 
 	j = 0;
+	printf("%d\n", vm->players_num);
 	while (j < vm->players_num)
 	{
 		player = vm->players[j];
@@ -262,7 +268,40 @@ void		print_info_for_player(t_vm *vm)
 			printf("%02x", player->code[i]);
 			i++;
 		}
+		printf("\n");
 		j++;
+	}
+}
+
+void		print_arena(t_vm *vm)
+{
+	ssize_t i;
+
+	i = 0;
+	while (i < MEM_SIZE)
+	{
+		if (i % (MEM_SIZE / 32) == 0)
+			printf("\n");
+		else if (i % 2 == 0)
+			printf (" ");
+		printf("%01x", vm->arena[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+void		entry_arena(t_vm *vm)
+{
+	int			i;
+	uint32_t	pc;
+
+	i = 0;
+	pc = 0;
+	while (i < vm->players_num)
+	{
+		ft_memcpy(&(vm->arena[pc]), vm->players[i]->code, vm->players[i]->code_size);
+		pc += MEM_SIZE / vm->players_num;
+		i++;
 	}
 }
 
@@ -277,7 +316,11 @@ int			main(int ac, char **av)
 		av++;
 		vm = init_vm();
 		parse_corewar_args(ac, av, vm);
+		entry_arena(vm);
+		//set_cursors(vm);
+		//WAR!!!!
 		print_info_for_player(vm);
+		print_arena(vm);
 	}
 	return (0);
 }
