@@ -11,10 +11,14 @@
 /* ************************************************************************** */
 
 #include "corewar.h"
+#include "libft.h"
 
-void    op_live(t_vm *vm, t_cursor *cursor)
+void    		op_live(t_vm *vm, t_cursor *cursor)
 {
+	uint32_t	arg_player;
+
     cursor->last_live = vm->cycles;
-    if ()
-    vm->lives_num++;
+    arg_player = (uint32_t)ft_memcpy(ft_memalloc(DIR_SIZE), vm->arena[cursor->pc], DIR_SIZE);
+    if (arg_player )
+    //vm->lives_num++;
 }

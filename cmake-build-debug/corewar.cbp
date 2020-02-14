@@ -8,365 +8,363 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/enikole/workspace/corewar/cmake-build-debug"/>
+				<Option working_dir="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/enikole/workspace/corewar/cmake-build-debug"/>
+				<Option working_dir="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/enikole/workspace/corewar/cmake-build-debug"/>
+				<Option working_dir="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="corewar">
-				<Option output="/Users/enikole/workspace/corewar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/enikole/workspace/corewar/cmake-build-debug"/>
+				<Option output="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/enikole/workspace/corewar/includes"/>
-					<Add directory="/Users/enikole/workspace/corewar/libft"/>
+					<Add directory="/Users/yakimkina/workspace/21_SCHOOL/corewar/includes"/>
+					<Add directory="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="corewar/fast">
-				<Option output="/Users/enikole/workspace/corewar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/enikole/workspace/corewar/cmake-build-debug"/>
+				<Option output="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/enikole/workspace/corewar/includes"/>
-					<Add directory="/Users/enikole/workspace/corewar/libft"/>
+					<Add directory="/Users/yakimkina/workspace/21_SCHOOL/corewar/includes"/>
+					<Add directory="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/enikole/workspace/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/enikole/workspace/corewar/includes/corewar.h">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/includes/corewar.h">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/includes/op.h">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/includes/op.h">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_10_to_16.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_10_to_16.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_10_to_16_long.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_10_to_16_long.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_10_to_8.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_10_to_8.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_10_to_8_long.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_10_to_8_long.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_abs.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_abs.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_atoi.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_atoi.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_bzero.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_bzero.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_capitalize.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_capitalize.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_count_num.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_count_num.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_count_num_16.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_count_num_16.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_count_num_8.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_count_num_8.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_count_num_big.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_count_num_big.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_count_num_long.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_count_num_long.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_count_num_long_long.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_count_num_long_long.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_countwords.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_countwords.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_get_word_len.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_get_word_len.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_isalnum.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_isalnum.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_isalpha.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_isalpha.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_isascii.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_isascii.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_isdigit.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_isdigit.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_isnumber.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_isnumber.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_isprint.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_isprint.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_itoa.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_itoa.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lltoa.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lltoa.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lstadd.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lstadd.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lstdel.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lstdel.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lstdelone.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lstdelone.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lstiter.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lstiter.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lstmap.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lstmap.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_lstnew.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_lstnew.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_ltoa.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_ltoa.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memalloc.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memalloc.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memccpy.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memccpy.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memchr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memchr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memcmp.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memcmp.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memcpy.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memcpy.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memdel.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memdel.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memmove.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memmove.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_memset.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_memset.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_power.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_power.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putchar.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putchar.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putchar_fd.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putchar_fd.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putendl.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putendl.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putendl_fd.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putendl_fd.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_8.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_8.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_8_long.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_8_long.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_big.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_big.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_fd.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_fd.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_hex.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_hex.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_hex_long.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_hex_long.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_hex_long_upper.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_hex_long_upper.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_hex_upper.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_hex_upper.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putnbr_uns.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putnbr_uns.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putstr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putstr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_putstr_fd.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_putstr_fd.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strcat.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strcat.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strchr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strchr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strclen.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strclen.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strclr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strclr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strcmp.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strcmp.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strcpy.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strcpy.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strdel.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strdel.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strdel1join.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strdel1join.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strdup.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strdup.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strequ.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strequ.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_striter.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_striter.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_striteri.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_striteri.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strjoin.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strjoin.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strlcat.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strlcat.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strlen.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strlen.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strmap.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strmap.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strmapi.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strmapi.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strncat.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strncat.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strncmp.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strncmp.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strncpy.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strncpy.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strnequ.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strnequ.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strnew.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strnew.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strnstr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strnstr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strrchr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strrchr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strrev.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strrev.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strsplit.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strsplit.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strstr.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strstr.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strsub.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strsub.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_strtrim.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_strtrim.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_tolower.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_tolower.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/ft_toupper.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/ft_toupper.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/libft/libft.h">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/libft/libft.h">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/src/corewar.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/src/corewar.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/src/error.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/src/error.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/src/init_cursors.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/src/init_cursors.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/src/operations/op_live.c">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/src/operations/op_live.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/CMakeLists.txt">
+		<Unit filename="/Users/yakimkina/workspace/21_SCHOOL/corewar/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
