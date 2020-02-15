@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   live.c                                             :+:      :+:    :+:   */
+/*   op_live.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enikole <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 14:22:59 by enikole           #+#    #+#             */
-/*   Updated: 2020/02/12 14:23:06 by enikole          ###   ########.fr       */
+/*   Created: 2020/02/14 16:48:45 by enikole           #+#    #+#             */
+/*   Updated: 2020/02/14 16:48:47 by enikole          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,16 @@
 
 void    		op_live(t_vm *vm, t_cursor *cursor)
 {
-	uint32_t	arg_player;
+	int32_t     arg;
+	t_player    *player;
 
     cursor->last_live = vm->cycles;
-    arg_player = (uint32_t)ft_memcpy(ft_memalloc(DIR_SIZE), vm->arena[cursor->pc], DIR_SIZE);
-    if (arg_player )
+    arg = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc], DIR_SIZE);
+    if (arg < 0 && arg >= (-1) * vm->players_num)
+    {
+        player = vm->players[(-1) * arg]);
+        player->last_live = vm->cycles;
+        player->current_lives_num++;
+    }
     //vm->lives_num++;
 }
