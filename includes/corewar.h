@@ -1,11 +1,11 @@
 #ifndef COREWAR_H
 # define COREWAR_H
 
-#include "../libft/libft.h"
-#include "op.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+# include "../libft/libft.h"
+# include "op.h"
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 #define print_error ft_putendl("--------------------------HEWSTON, A PROBLEM UP HERE!!!--------------------------");
 #define print_start ft_putendl("--------------------------START--------------------------");
@@ -60,7 +60,17 @@ typedef struct			s_vm
 	int					log;
 }						t_vm;
 
-void	error(char *str);
-void	init_cursors(t_vm *vm);
+void					error(char *str);
+void					init_cursors(t_vm *vm);
+void					print_cursors(t_vm *vm);
+void					print_arena_full(t_vm *vm);
+void					print_info_for_player(t_vm *vm);
+void					entry_arena(t_vm *vm);
+void					parse_corewar_args(int ac, char **av, t_vm *vm);
+t_player				*find_player(t_player *list, int32_t id);
+t_player				*init_player(int id);
+int						ft_max_min_int(char *buff);
+int						is_cor(char *av);
+t_vm					*init_vm(void);
 
 #endif

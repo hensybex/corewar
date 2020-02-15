@@ -9,6 +9,10 @@ FLAGS =
 LIST =			corewar \
 				error \
 				init_cursors \
+				info \
+				init \
+				parse \
+				help_func \
 
 OBJ =			$(addprefix obj/, $(addsuffix .o, $(LIST)))
 

@@ -1,6 +1,5 @@
 #include "../includes/corewar.h"
 
-
 t_cursor	new_cursor(t_vm *vm, int player_num, int pc)
 {
 	t_cursor	buff;
@@ -54,5 +53,4 @@ void	init_cursors(t_vm *vm)
 		pc += MEM_SIZE / vm->players_num;
 		player_num++;
 	}
-	ft_putendl("End of cursor init\n");
 }
