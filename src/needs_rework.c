@@ -24,18 +24,18 @@ void		parse_types_code(t_vm *vm, t_cursor *cursor, t_op *op)
 		cursor->args_types[0] = op->args_types[0];
 }
 
-int		are_args_types_valid(t_cursor *cursor, t_op *op)
+t_bool			is_arg_types_valid(t_cursor *cursor, t_op *op)
 {
-	int	i;
+	int32_t i;
 
 	i = 0;
 	while (i < op->args_num)
 	{
-		if (!(cursor->args_types[i] & op->args_types[i])) //ЛЁХА ПОФИКСИ ЭТО ПЛЗ!!!!!! И ЛИБУ НЕ УДАЛЯЙ!!!!
-			return (0);
+		if (!(cursor->args_types[i] & op->args_types[i]))
+			return (false);
 		i++;
 	}
-	return (1);
+	return (true);
 }
 
 static t_bool	is_register(t_vm *vm, int32_t pc, int32_t step)
@@ -78,19 +78,20 @@ inline int8_t	get_byte(t_vm *vm, int32_t pc, int32_t step)
 	return (vm->arena[calc_addr(pc + step)]);
 }
 
-int		are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op)
+t_bool			is_args_valid(t_cursor *cursor, t_vm *vm, t_op *op)
 {
-	int	step;
-	int	i;
+	int32_t		i;
+	uint32_t	step;
 
 	i = 0;
 	step = (OP_CODE_LEN + (op->args_types_code ? ARGS_CODE_LEN : 0));
 	while (i < op->args_num)
 	{
-		if ((cursor->args_types[i] == T_REG) && !is_register(vm, cursor->pc, step))
-			return (0);
+		if ((cursor->args_types[i] == T_REG)
+			&& !is_register(vm, cursor->pc, step))
+			return (false);
 		step += step_size(cursor->args_types[i], op);
 		i++;
 	}
-	return (1);
+	return (true);
 }

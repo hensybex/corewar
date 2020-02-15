@@ -29,7 +29,8 @@ static uint8_t			g_arg_code[3] = {
 void					error(char *str);
 void					init_cursors(t_vm *vm);
 void					print_cursors(t_vm *vm);
-void					print_arena_full(t_vm *vm);
+//void					print_arena_full(t_vm *vm);
+void					print_arena(uint8_t *arena, int print_mode);
 void					print_info_for_player(t_vm *vm);
 void					entry_arena(t_vm *vm);
 void					parse_corewar_args(int ac, char **av, t_vm *vm);
@@ -40,6 +41,7 @@ int						is_cor(char *av);
 t_vm					*init_vm(void);
 void					add_cursor(t_vm *vm, int player_num, int pc);
 void					battle(t_vm *vm);
+t_cursor				*init_cursor(t_player *player, int32_t pc);
 
 void		run_operation(t_vm *vm, t_cursor *cursor);
 
@@ -48,5 +50,6 @@ void		int32_to_bytecode(uint8_t *arena, int32_t addr, int32_t value,int32_t size
 int32_t		bytecode_to_int32(const uint8_t *arena, int32_t addr, int32_t size);
 int8_t		get_byte(t_vm *vm, int32_t pc, int32_t step);
 int32_t		calc_addr(int32_t addr);
+void	add_cursorr(t_cursor **list, t_cursor *new);
 
 #endif

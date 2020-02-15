@@ -1,5 +1,7 @@
 #include "../includes/corewar.h"
 
+int	gl = 0;
+
 void	run_cycles(t_vm *vm)
 {
 	t_cursor	*cursor;
@@ -9,15 +11,15 @@ void	run_cycles(t_vm *vm)
 	cursor = vm->cursors;
 	while (cursor != NULL)
 	{
+		gl++;
 		run_operation(vm, cursor);
 		cursor = cursor->next;
 	}
+	ft_putnbr(gl);
 }
 
-int		calc_addr(int pc)
+int32_t		calc_addr(int32_t addr)
 {
-	int	addr;
-
 	addr %= MEM_SIZE;
 	if (addr < 0)
 		addr += MEM_SIZE;
@@ -33,18 +35,28 @@ void	update_op_code(t_vm *vm, t_cursor *cursor)
 
 void	move_cursor(t_vm *vm, t_cursor *cursor)
 {
+	/* ft_putnbr(cursor->id);
+	ft_putchar(' ');
+	ft_putnbr(cursor->pc);
+	ft_putchar(' '); */
 	cursor->pc += cursor->step;
 	cursor->pc = calc_addr(cursor->pc);
+	/* ft_putnbr(cursor->pc);
+	ft_putchar('\n'); */
 	cursor->step = 0;
 	ft_bzero(cursor->args_types, 3);
-	update_op_code(vm, cursor);
+	//update_op_code(vm, cursor);
 }
 
 void	run_operation(t_vm *vm, t_cursor *cursor)
 {
 	t_op	*op;
 
-	cursor->cycles_to_exec--;
+	//cursor->cycles_to_exec--;
+	if (cursor->cycles_to_exec == 0)
+		update_op_code(vm, cursor);
+	if (cursor->cycles_to_exec > 0)
+		cursor->cycles_to_exec--;
 	if (cursor->cycles_to_exec == 0)
 	{
 		op = NULL;
@@ -53,18 +65,51 @@ void	run_operation(t_vm *vm, t_cursor *cursor)
 		if (op != NULL)
 		{
 			parse_types_code(vm, cursor, op);
-			if (are_args_types_valid(cursor, op) && are_args_valid(cursor, vm, op))
+			if (is_arg_types_valid(cursor, op) && is_args_valid(cursor, vm, op))
 				op->func(vm, cursor);
 			else
 				cursor->step +=  calc_step(cursor, op);
 		}
 		else
 			cursor->step = OP_CODE_LEN;
-		move_cursor(vm, cursor);
+		move_cursor(vm, cursor);/* 
+		ft_putnbr(cursor->id);
+		ft_putchar(' '); */
 	}
 }
 
-void	delete_dead_cursors(t_vm *vm)
+static t_bool	is_dead(t_vm *vm, t_cursor *cursor)
+{
+	return (vm->cycles_to_die <= 0
+			|| vm->cycles - cursor->last_live >= vm->cycles_to_die);
+}
+
+static void		delete_dead_cursors(t_vm *vm)
+{
+	t_cursor	*previous;
+	t_cursor	*current;
+	t_cursor	*delete;
+
+	previous = NULL;
+	current = vm->cursors;
+	while (current)
+		if (is_dead(vm, (delete = current)) && vm->cursors_num--)
+		{
+			current = current->next;
+			if (vm->cursors == delete)
+				vm->cursors = current;
+			if (previous)
+				previous->next = current;
+			ft_memdel((void **)&delete);
+		}
+		else
+		{
+			previous = current;
+			current = current->next;
+		}
+}
+
+/* void	delete_dead_cursors(t_vm *vm)
 {
 	t_cursor	*cursor;
 	t_cursor	*delete;
@@ -90,11 +135,11 @@ void	delete_dead_cursors(t_vm *vm)
 		}
 		vm->cursors_num--;
 	}
-}
+} */
 
 void	update_lives(t_vm *vm)
 {
-	int	i;
+	int32_t		i;
 
 	i = 0;
 	while (i < vm->players_num)
@@ -148,11 +193,8 @@ void	battle(t_vm *vm)
 			print_arena(vm->arena, vm->dump_print_mode);
 			exit(0);
 		}
-		else
-		{
-			run_cycles(vm);
-			if (vm->cycles_to_die == vm->cycles_after_check || vm->cycles_to_die <= 0)
-				cycles_to_die_check(vm);
-		}
+		run_cycles(vm);
+		if (vm->cycles_to_die == vm->cycles_after_check || vm->cycles_to_die <= 0)
+			cycles_to_die_check(vm);
 	}
 }

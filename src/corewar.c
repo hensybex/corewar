@@ -40,6 +40,7 @@ int			main(int ac, char **av)
 		init_cursors(vm);
 		//print_cursors(vm);
 		print_intro(vm->players, vm->players_num);
+		//print_arena_full(vm);
 		battle(vm);
 		print_last_alive(vm);
 		//print_info_for_player(vm);

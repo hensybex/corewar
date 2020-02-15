@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_lfork.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:54:46 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 13:52:47 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/15 22:24:04 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void				op_lfork(t_vm *vm, t_cursor *cursor)
 	cursor->step += OP_CODE_LEN;
 	addr = get_op_arg(vm, cursor, 1, true);
 	new = duplicate_cursor(cursor, addr);
-	add_cursor(&(vm->cursors), new);
+	add_cursorr(&(vm->cursors), new);
 	vm->cursors_num++;
 }

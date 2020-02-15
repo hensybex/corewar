@@ -44,7 +44,7 @@ void		print_info_for_player(t_vm *vm)
 	}
 }
 
-void		print_arena_full(t_vm *vm)
+/* void		print_arena_full(t_vm *vm)
 {
 	ssize_t i;
 
@@ -59,4 +59,4 @@ void		print_arena_full(t_vm *vm)
 		i++;
 	}
 	printf("\n");
-}
+ }*/

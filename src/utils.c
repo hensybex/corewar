@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 12:33:19 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 19:01:06 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/15 23:05:20 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,31 +75,13 @@ int32_t		get_op_arg(t_vm *vm, t_cursor *cursor, uint8_t index, t_bool mod)
 	return (value);
 }
 
-t_cursor	*init_cursorsss(t_player *player, int32_t pc)
-{
-	t_cursor		*cursor;
-	static uint32_t	cursor_id;
-
-	cursor = (t_cursor *)ft_memalloc(sizeof(t_cursor));
-	cursor->id = ++cursor_id;
-	cursor->carry = false;
-	cursor->op_code = 0;
-	cursor->last_live = 0;
-	cursor->cycles_to_exec = 0;
-	cursor->pc = pc;
-	cursor->next = NULL;
-	cursor->reg[INDEX(1)] = -(player->id);
-	cursor->player = player;
-	return (cursor);
-}
-
 t_cursor	*duplicate_cursor(t_cursor *cursor, int32_t addr)
 {
 	t_cursor	*new;
 	int			i;
 
 	addr = calc_addr(cursor->pc + addr);
-	new = init_cursorsss(cursor->player, addr);
+	new = init_cursor(cursor->player, addr);
 	i = 0;
 	while (i < REG_NUMBER)
 	{
