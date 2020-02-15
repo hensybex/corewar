@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medesmon <medesmon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 23:01:51 by medesmon          #+#    #+#             */
-/*   Updated: 2019/09/26 23:12:40 by medesmon         ###   ########.fr       */
+/*   Updated: 2020/02/15 18:52:34 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef enum
+{
+	false,
+	true
+}	t_bool;
 
 void				*ft_memset(void *dst, int n, size_t len);
 void				ft_bzero(void *b, size_t n);

@@ -1,7 +1,8 @@
 NAME =			corewar
 
-INC =			-I ./includes \
-				-I ./libft/
+INC =			-I ./includes/ \
+				-I ./libft/ \
+
 LIB =			-L ./libft -lft
 
 FLAGS =			
@@ -13,6 +14,25 @@ LIST =			corewar \
 				init \
 				parse \
 				help_func \
+				battle \
+				needs_rework \
+				op_add \
+				op_aff \
+				op_and \
+				op_fork \
+				op_ld \
+				op_ldi \
+				op_lfork \
+				op_live \
+				op_lld \
+				op_lldi \
+				op_or \
+				op_st \
+				op_sti \
+				op_sub \
+				op_xor \
+				op_zjmp \
+				utils \
 
 OBJ =			$(addprefix obj/, $(addsuffix .o, $(LIST)))
 
