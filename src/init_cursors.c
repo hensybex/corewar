@@ -28,15 +28,16 @@ t_cursor	*init_cursor(t_player *player, int32_t pc)
 	t_cursor		*cursor;
 	static uint32_t	cursor_id;
 
-	cursor = (t_cursor *)ft_memalloc(sizeof(t_cursor));
+	if (!(cursor = (t_cursor *)ft_memalloc(sizeof(t_cursor))))
+		error("Memory Allocation Error");
 	cursor->id = ++cursor_id;
-	cursor->carry = false;
+	cursor->carry = 0;
 	cursor->op_code = 0;
 	cursor->last_live = 0;
 	cursor->cycles_to_exec = 0;
 	cursor->pc = pc;
 	cursor->next = NULL;
-	cursor->reg[INDEX(1)] = -(player->id);
+	cursor->reg[0] = -(player->id);
 	cursor->player = player;
 	return (cursor);
 }
@@ -50,7 +51,7 @@ void	init_cursors(t_vm *vm)
 	pc = 0;
 	while (id <= vm->players_num)
 	{
-		add_cursorr(&(vm->cursors), init_cursor(vm->players[INDEX(id)], pc));
+		add_cursorr(&(vm->cursors), init_cursor(vm->players[id - 1], pc));
 		vm->cursors_num++;
 		pc += MEM_SIZE / vm->players_num;
 		id++;

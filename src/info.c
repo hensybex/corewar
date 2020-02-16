@@ -43,20 +43,3 @@ void		print_info_for_player(t_vm *vm)
 		j++;
 	}
 }
-
-/* void		print_arena_full(t_vm *vm)
-{
-	ssize_t i;
-
-	i = 0;
-	while (i < MEM_SIZE)
-	{
-		if (i % (MEM_SIZE / 32) == 0)
-			printf("\n");
-		else if (i % 2 == 0)
-			printf (" ");
-		printf("%01x", vm->arena[i]);
-		i++;
-	}
-	printf("\n");
- }*/

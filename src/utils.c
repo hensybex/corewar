@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 12:33:19 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 23:05:20 by admin            ###   ########.fr       */
+/*   Updated: 2020/02/16 14:40:05 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "corewar_op.h"
 
-int32_t		bytecode_to_int32(const uint8_t *arena, int32_t addr, int32_t size)
+int32_t		bytecode_to_4_byte(const uint8_t *arena, int32_t addr, int32_t size)
 {
 	int32_t		result;
-	t_bool			sign;
+	int			sign;
 	int			i;
 
 	result = 0;
-	sign = (t_bool)(arena[calc_addr(addr)] & 0x80);
+	sign = (int)(arena[calc_addr(addr)] & 0x80);
 	i = 0;
 	while (size)
 	{
@@ -34,7 +34,7 @@ int32_t		bytecode_to_int32(const uint8_t *arena, int32_t addr, int32_t size)
 	return (result);
 }
 
-void		int32_to_bytecode(uint8_t *arena, int32_t addr, int32_t value,
+void		byte_4_to_bytecode(uint8_t *arena, int32_t addr, int32_t value,
 						int32_t size)
 {
 	int8_t i;
@@ -48,30 +48,30 @@ void		int32_to_bytecode(uint8_t *arena, int32_t addr, int32_t value,
 	}
 }
 
-int32_t		get_op_arg(t_vm *vm, t_cursor *cursor, uint8_t index, t_bool mod)
+int32_t		get_op_arg(t_vm *vm, t_cursor *cursor, uint8_t index, int mod)
 {
 	t_op		*op;
 	int32_t		value;
 	int32_t		addr;
 
-	op = &g_op[INDEX(cursor->op_code)];
+	op = &g_op[cursor->op_code - 1];
 	value = 0;
-	if (cursor->args_types[INDEX(index)] & T_REG)
-		value = cursor->reg[INDEX(get_byte(vm, cursor->pc, cursor->step))];
-	else if (cursor->args_types[INDEX(index)] & T_DIR)
-		value = bytecode_to_int32(vm->arena,
+	if (cursor->args_types[index - 1] & T_REG)
+		value = cursor->reg[get_byte(vm, cursor->pc, cursor->step) - 1];
+	else if (cursor->args_types[index - 1] & T_DIR)
+		value = bytecode_to_4_byte(vm->arena,
 								cursor->pc + cursor->step,
 								op->t_dir_size);
-	else if (cursor->args_types[INDEX(index)] & T_IND)
+	else if (cursor->args_types[index - 1] & T_IND)
 	{
-		addr = bytecode_to_int32(vm->arena,
+		addr = bytecode_to_4_byte(vm->arena,
 								cursor->pc + cursor->step,
 								IND_SIZE);
-		value = bytecode_to_int32(vm->arena,
+		value = bytecode_to_4_byte(vm->arena,
 							cursor->pc + (mod ? (addr % IDX_MOD) : addr),
 							DIR_SIZE);
 	}
-	cursor->step += step_size(cursor->args_types[INDEX(index)], op);
+	cursor->step += step_size(cursor->args_types[index - 1], op);
 	return (value);
 }
 
@@ -93,3 +93,9 @@ t_cursor	*duplicate_cursor(t_cursor *cursor, int32_t addr)
 	return (new);
 }
 
+int32_t		modul(int32_t id)
+{
+	if (id < 0)
+		return (-id);
+	return (id);
+}

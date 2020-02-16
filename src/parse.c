@@ -76,8 +76,7 @@ uint8_t	*parse_exec_code(int fd, size_t len)
 
 	if (!(buff = malloc(len)))
 		error("Memory Allocation Error");
-	size = read(fd, buff, len);
-	if (size == -1)
+	if ((size = read(fd, buff, len)) == -1)
 		error("Error reading file");
 	if (size < (ssize_t)len || read(fd, &byte, 1) != 0)
 		error("Invalid file");
@@ -185,6 +184,13 @@ void		parse_file(int *ac, char ***av, t_vm *vm, t_player **list)
 	}
 }
 
+void	parse_aff(int *ac, char ***av, t_vm *vm)
+{
+	vm->display_aff = 1; // поменять на 1
+	(*ac)--;
+	(*av)++;
+}
+
 void	parse_dump(int *ac, char ***av, t_vm *vm)
 {
 	if (!vm->dump_print_mode && *ac >= 2 && ft_max_min_int(*(*av + 1)))
@@ -214,6 +220,8 @@ void		parse_corewar_args(int ac, char **av, t_vm *vm)
 			parse_dump(&ac, &av, vm);
 		else if (!ft_strcmp(*av, "-n") || is_cor(*av))
 			parse_file(&ac, &av, vm, &list);
+		else if (!ft_strcmp(*av, "-a"))
+			parse_aff(&ac, &av, vm);
 		else
 			error("Error arg");
 	}

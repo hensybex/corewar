@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:59:33 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 13:03:24 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 16:04:51 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ void	op_aff(t_vm *vm, t_cursor *cursor)
 	r_id = get_byte(vm, cursor->pc, cursor->step);
 	value = cursor->reg[INDEX(r_id)];
 	cursor->step += REG_LEN;
+	if (vm->display_aff)
+		printf("Aff: %c\n", (char)value);
 }

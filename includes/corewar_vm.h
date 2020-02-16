@@ -47,13 +47,9 @@ typedef struct			s_vm
 	ssize_t				cycles_to_die;
 	ssize_t				cycles_after_check;
 	size_t				checks_num;
-	//struct s_vs			*vs;
 	ssize_t				dump_cycle;
 	int					dump_print_mode;
-	ssize_t				show_cycle;
-	int					show_print_mode;
-	//t_bool				display_aff;
-	int					log;
+	int					display_aff;
 }						t_vm;
 
 #endif

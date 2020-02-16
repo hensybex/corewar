@@ -17,9 +17,7 @@ t_vm		*init_vm(void)
 	vm->checks_num = 0;
 	vm->dump_cycle = -1;
 	vm->dump_print_mode = 0;
-	vm->show_cycle = -1;
-	vm->show_print_mode = 0;
-	vm->log = 0;
+	vm->display_aff = 0; // поменять на 0
 	return (vm);
 }
 

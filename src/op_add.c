@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:50:27 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 18:49:36 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 11:56:56 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void				op_add(t_vm *vm, t_cursor *cursor)
 	cursor->step += REG_LEN;
 	r2_id = get_byte(vm, cursor->pc, cursor->step);
 	cursor->step += REG_LEN;
-	value = cursor->reg[INDEX(r1_id)] + cursor->reg[INDEX(r2_id)];
-	cursor->carry = (t_bool)(!value);
+	value = cursor->reg[r1_id - 1] + cursor->reg[r2_id - 1];
+	cursor->carry = (int)(!value);
 	r3_id = get_byte(vm, cursor->pc, cursor->step);
-	cursor->reg[INDEX(r3_id)] = value;
+	cursor->reg[r3_id - 1] = value;
 	cursor->step += REG_LEN;
 }

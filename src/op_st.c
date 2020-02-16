@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:31:12 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 13:24:33 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 14:40:05 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void				op_st(t_vm *vm, t_cursor *cursor)
 	}
 	else
 	{
-		addr = bytecode_to_int32(vm->arena,
+		addr = bytecode_to_4_byte(vm->arena,
 							cursor->pc + cursor->step, IND_SIZE);
-		int32_to_bytecode(vm->arena, cursor->pc + (addr % IDX_MOD),
+		byte_4_to_bytecode(vm->arena, cursor->pc + (addr % IDX_MOD),
 							r_value, DIR_SIZE);
 		cursor->step += IND_SIZE;
 	}

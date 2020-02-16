@@ -5,7 +5,7 @@ INC =			-I ./includes/ \
 
 LIB =			-L ./libft -lft
 
-FLAGS = 		-O3
+FLAGS = 		-O3 #-Wall -Wextra -Werror
 
 LIST =			corewar \
 				error \

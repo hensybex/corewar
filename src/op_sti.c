@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 17:28:48 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 13:54:49 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 14:40:05 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void				op_sti(t_vm *vm, t_cursor *cursor)
 	r_id = get_byte(vm, cursor->pc, cursor->step);
 	value = cursor->reg[INDEX(r_id)];
 	cursor->step += REG_LEN;
-	addr_1 = get_op_arg(vm, cursor, 2, true);
-	addr_2 = get_op_arg(vm, cursor, 3, true);
-	int32_to_bytecode(vm->arena,
+	addr_1 = get_op_arg(vm, cursor, 2, 1);
+	addr_2 = get_op_arg(vm, cursor, 3, 1);
+	byte_4_to_bytecode(vm->arena,
 			(cursor->pc + ((addr_1 + addr_2) % IDX_MOD)), value, DIR_SIZE);
 }

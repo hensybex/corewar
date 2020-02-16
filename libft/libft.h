@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 23:01:51 by medesmon          #+#    #+#             */
-/*   Updated: 2020/02/16 11:40:55 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 11:41:51 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-
-typedef enum
-{
-	false,
-	true
-}	t_bool;
 
 void				*ft_memset(void *dst, int n, size_t len);
 void				ft_bzero(void *b, size_t n);

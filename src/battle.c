@@ -25,11 +25,11 @@ int32_t		calc_addr(int32_t addr)
 void	update_op_code(t_vm *vm, t_cursor *cursor)
 {
 	cursor->op_code = vm->arena[cursor->pc];
-	if (vm->arena[cursor->pc] >= 0x01 && vm->arena[cursor->pc] <= 0x10)
-		cursor->cycles_to_exec = g_op[INDEX(cursor->op_code)].cycles;
+	if (vm->arena[cursor->pc] >= 1 && vm->arena[cursor->pc] <= 16)
+		cursor->cycles_to_exec = g_op[cursor->op_code - 1].cycles;
 }
 
-void	move_cursor(t_vm *vm, t_cursor *cursor)
+void	move_cursor(t_cursor *cursor)
 {
 	cursor->pc += cursor->step;
 	cursor->pc = calc_addr(cursor->pc);
@@ -48,8 +48,8 @@ void	run_operation(t_vm *vm, t_cursor *cursor)
 	if (cursor->cycles_to_exec == 0)
 	{
 		op = NULL;
-		if (cursor->op_code >= 0x01 && cursor->op_code <= 0x10)
-			op = &g_op[INDEX(cursor->op_code)];
+		if (cursor->op_code >= 1 && cursor->op_code <= 16)
+			op = &g_op[cursor->op_code - 1];
 		if (op != NULL)
 		{
 			parse_types_code(vm, cursor, op);
@@ -60,11 +60,11 @@ void	run_operation(t_vm *vm, t_cursor *cursor)
 		}
 		else
 			cursor->step = OP_CODE_LEN;
-		move_cursor(vm, cursor);
+		move_cursor(cursor);
 	}
 }
 
-static t_bool	is_dead(t_vm *vm, t_cursor *cursor)
+static int	is_dead(t_vm *vm, t_cursor *cursor)
 {
 	return (vm->cycles_to_die <= 0
 			|| vm->cycles - cursor->last_live >= vm->cycles_to_die);

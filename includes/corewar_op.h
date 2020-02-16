@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:52:17 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/16 11:40:11 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 14:40:05 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ static t_op		g_op[16] = {
 		.name = "live",
 		.code = 0x01,
 		.args_num = 1,
-		.args_types_code = false,
+		.args_types_code = 0,
 		.args_types = {T_DIR, 0, 0},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 4,
 		.cycles = 10,
 		.func = &op_live
@@ -67,9 +67,9 @@ static t_op		g_op[16] = {
 		.name = "ld",
 		.code = 0x02,
 		.args_num = 2,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_DIR | T_IND, T_REG, 0},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 5,
 		.func = &op_ld
@@ -78,9 +78,9 @@ static t_op		g_op[16] = {
 		.name = "st",
 		.code = 0x03,
 		.args_num = 2,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG, T_REG | T_IND, 0},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 4,
 		.cycles = 5,
 		.func = &op_st
@@ -89,9 +89,9 @@ static t_op		g_op[16] = {
 		.name = "add",
 		.code = 0x04,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG, T_REG, T_REG},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 10,
 		.func = &op_add
@@ -100,9 +100,9 @@ static t_op		g_op[16] = {
 		.name = "sub",
 		.code = 0x05,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG, T_REG, T_REG},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 10,
 		.func = &op_sub
@@ -111,9 +111,9 @@ static t_op		g_op[16] = {
 		.name = "and",
 		.code = 0x06,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG | T_DIR | T_IND, T_REG | T_DIR | T_IND, T_REG},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 6,
 		.func = &op_and
@@ -122,9 +122,9 @@ static t_op		g_op[16] = {
 		.name = "or",
 		.code = 0x07,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG | T_DIR | T_IND, T_REG | T_DIR | T_IND, T_REG},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 6,
 		.func = &op_or
@@ -133,9 +133,9 @@ static t_op		g_op[16] = {
 		.name = "xor",
 		.code = 0x08,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG | T_DIR | T_IND, T_REG | T_DIR | T_IND, T_REG},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 6,
 		.func = &op_xor
@@ -144,9 +144,9 @@ static t_op		g_op[16] = {
 		.name = "zjmp",
 		.code = 0x09,
 		.args_num = 1,
-		.args_types_code = false,
+		.args_types_code = 0,
 		.args_types = {T_DIR, 0, 0},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 20,
 		.func = &op_zjmp
@@ -155,9 +155,9 @@ static t_op		g_op[16] = {
 		.name = "ldi",
 		.code = 0x0A,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG | T_DIR | T_IND, T_REG | T_DIR, T_REG},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 25,
 		.func = &op_ldi
@@ -166,9 +166,9 @@ static t_op		g_op[16] = {
 		.name = "sti",
 		.code = 0x0B,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG, T_REG | T_DIR | T_IND, T_REG | T_DIR},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 25,
 		.func = &op_sti
@@ -177,9 +177,9 @@ static t_op		g_op[16] = {
 		.name = "fork",
 		.code = 0x0C,
 		.args_num = 1,
-		.args_types_code = false,
+		.args_types_code = 0,
 		.args_types = {T_DIR, 0, 0},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 800,
 		.func = &op_fork
@@ -188,9 +188,9 @@ static t_op		g_op[16] = {
 		.name = "lld",
 		.code = 0x0D,
 		.args_num = 2,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_DIR | T_IND, T_REG, 0},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 10,
 		.func = &op_lld
@@ -199,9 +199,9 @@ static t_op		g_op[16] = {
 		.name = "lldi",
 		.code = 0x0E,
 		.args_num = 3,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG | T_DIR | T_IND, T_REG | T_DIR, T_REG},
-		.modify_carry = true,
+		.modify_carry = 1,
 		.t_dir_size = 2,
 		.cycles = 50,
 		.func = &op_lldi
@@ -210,9 +210,9 @@ static t_op		g_op[16] = {
 		.name = "lfork",
 		.code = 0x0F,
 		.args_num = 1,
-		.args_types_code = false,
+		.args_types_code = 0,
 		.args_types = {T_DIR, 0, 0},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 1000,
 		.func = &op_lfork
@@ -221,9 +221,9 @@ static t_op		g_op[16] = {
 		.name = "aff",
 		.code = 0x10,
 		.args_num = 1,
-		.args_types_code = true,
+		.args_types_code = 1,
 		.args_types = {T_REG, 0, 0},
-		.modify_carry = false,
+		.modify_carry = 0,
 		.t_dir_size = 4,
 		.cycles = 2,
 		.func = &op_aff
@@ -232,14 +232,14 @@ static t_op		g_op[16] = {
 
 t_cursor		*duplicate_cursor(t_cursor *cursor, int32_t addr);
 void			parse_types_code(t_vm *vm, t_cursor *cursor, t_op *op);
-t_bool				are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op);
-t_bool				are_args_types_valid(t_cursor *cursor, t_op *op);
+int				are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op);
+int				are_args_types_valid(t_cursor *cursor, t_op *op);
 uint32_t		calc_step(t_cursor *cursor, t_op *op);
 uint32_t		step_size(uint8_t arg_type, t_op *op);
-int32_t			bytecode_to_int32(const uint8_t *arena,
+int32_t			bytecode_to_4_byte(const uint8_t *arena,
 									int32_t addr,
 									int32_t size);
-void			int32_to_bytecode(uint8_t *arena,
+void			byte_4_to_bytecode(uint8_t *arena,
 									int32_t addr,
 									int32_t value,
 									int32_t size);
