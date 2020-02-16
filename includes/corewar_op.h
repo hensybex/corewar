@@ -6,7 +6,7 @@
 /*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:52:17 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/15 18:52:25 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/16 11:40:11 by noobythetur      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,79 +20,36 @@
 # include "op.h"
 # include "corewar_vm.h"
 
-/*
-** Operator
-*/
-
-/*
-** name            — operator's name
-** code            — operator's code
-** args_num        — number of arguments
-** args_types_code — flag which reports that operator has code of types
-** args_types      — types of each argument
-** modify_carry    — flag which reports that operator modifies carry
-** t_dir_size      — size of T_DIR agrument.
-** cycles          — cycles to execution of operator
-** func            — pointer to function
-*/
-
 typedef struct	s_op
 {
 	char		*name;
 	uint8_t		code;
 	uint8_t		args_num;
-	int		args_types_code;
+	int			args_types_code;
 	uint8_t		args_types[3];
-	int		modify_carry;
+	int			modify_carry;
 	uint8_t		t_dir_size;
 	uint32_t	cycles;
 	void		(*func)(t_vm *, t_cursor *);
 
 }				t_op;
 
-/*
-** Operators
-*/
-
-/*
-** Functions
-*/
-
 void			op_live(t_vm *vm, t_cursor *pc);
-
 void			op_ld(t_vm *vm, t_cursor *pc);
-
 void			op_st(t_vm *vm, t_cursor *pc);
-
 void			op_add(t_vm *vm, t_cursor *pc);
-
 void			op_sub(t_vm *vm, t_cursor *pc);
-
 void			op_and(t_vm *vm, t_cursor *cursor);
-
 void			op_or(t_vm *vm, t_cursor *cursor);
-
 void			op_xor(t_vm *vm, t_cursor *cursor);
-
 void			op_zjmp(t_vm *vm, t_cursor *cursor);
-
 void			op_ldi(t_vm *vm, t_cursor *cursor);
-
 void			op_sti(t_vm *vm, t_cursor *cursor);
-
 void			op_fork(t_vm *vm, t_cursor *cursor);
-
 void			op_lld(t_vm *vm, t_cursor *cursor);
-
 void			op_lldi(t_vm *vm, t_cursor *cursor);
-
 void			op_lfork(t_vm *vm, t_cursor *cursor);
-
 void			op_aff(t_vm *vm, t_cursor *cursor);
-
-/*
-** Array
-*/
 
 static t_op		g_op[16] = {
 	{
@@ -273,29 +230,17 @@ static t_op		g_op[16] = {
 	}
 };
 
-/*
-** Functions
-*/
-
 t_cursor		*duplicate_cursor(t_cursor *cursor, int32_t addr);
-
 void			parse_types_code(t_vm *vm, t_cursor *cursor, t_op *op);
-
-int				are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op);
-
-int				are_args_types_valid(t_cursor *cursor, t_op *op);
-
+t_bool				are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op);
+t_bool				are_args_types_valid(t_cursor *cursor, t_op *op);
 uint32_t		calc_step(t_cursor *cursor, t_op *op);
-
 uint32_t		step_size(uint8_t arg_type, t_op *op);
-
 int32_t			bytecode_to_int32(const uint8_t *arena,
 									int32_t addr,
 									int32_t size);
-
 void			int32_to_bytecode(uint8_t *arena,
 									int32_t addr,
 									int32_t value,
 									int32_t size);
-
 #endif

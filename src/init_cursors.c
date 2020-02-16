@@ -16,52 +16,12 @@ t_cursor	new_cursor(t_vm *vm, int player_num, int pc)
 	return (buff);
 }
 
-void	add_cursor(t_vm *vm, int player_num, int pc)
-{
-	t_cursor	buff;
-	t_cursor	*bbuff;
-
-	buff = new_cursor(vm, player_num, pc);
-	if (vm->cursors == NULL)
-	{
-		vm->cursors = (t_cursor *)malloc(sizeof(t_cursor));
-		*(vm->cursors) = buff;
-		vm->cursors->next = NULL;
-	}
-	else
-	{
-		bbuff = vm->cursors;
-		while (bbuff->next != NULL)
-			bbuff = bbuff->next;
-		bbuff->next = (t_cursor *)malloc(sizeof(t_cursor));
-		*(bbuff->next) = buff;
-		bbuff->next->next = NULL;
-	}
-}
-
 void	add_cursorr(t_cursor **list, t_cursor *new)
 {
 	if (new)
 		new->next = *list;
 	*list = new;
 }
-
-/* void	init_cursors(t_vm *vm)
-{
-	int	player_num;
-	int	pc;
-
-	pc = 0;
-	player_num = 0;
-	while (player_num < vm->players_num)
-	{
-		vm->cursors_num++;
-		add_cursor(vm, player_num, pc);
-		pc += MEM_SIZE / vm->players_num;
-		player_num++;
-	}
-} */
-
 
 t_cursor	*init_cursor(t_player *player, int32_t pc)
 {

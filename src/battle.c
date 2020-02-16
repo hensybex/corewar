@@ -1,7 +1,5 @@
 #include "../includes/corewar.h"
 
-int	gl = 0;
-
 void	run_cycles(t_vm *vm)
 {
 	t_cursor	*cursor;
@@ -11,11 +9,9 @@ void	run_cycles(t_vm *vm)
 	cursor = vm->cursors;
 	while (cursor != NULL)
 	{
-		gl++;
 		run_operation(vm, cursor);
 		cursor = cursor->next;
 	}
-	ft_putnbr(gl);
 }
 
 int32_t		calc_addr(int32_t addr)
@@ -35,24 +31,16 @@ void	update_op_code(t_vm *vm, t_cursor *cursor)
 
 void	move_cursor(t_vm *vm, t_cursor *cursor)
 {
-	/* ft_putnbr(cursor->id);
-	ft_putchar(' ');
-	ft_putnbr(cursor->pc);
-	ft_putchar(' '); */
 	cursor->pc += cursor->step;
 	cursor->pc = calc_addr(cursor->pc);
-	/* ft_putnbr(cursor->pc);
-	ft_putchar('\n'); */
 	cursor->step = 0;
 	ft_bzero(cursor->args_types, 3);
-	//update_op_code(vm, cursor);
 }
 
 void	run_operation(t_vm *vm, t_cursor *cursor)
 {
 	t_op	*op;
 
-	//cursor->cycles_to_exec--;
 	if (cursor->cycles_to_exec == 0)
 		update_op_code(vm, cursor);
 	if (cursor->cycles_to_exec > 0)
@@ -65,16 +53,14 @@ void	run_operation(t_vm *vm, t_cursor *cursor)
 		if (op != NULL)
 		{
 			parse_types_code(vm, cursor, op);
-			if (is_arg_types_valid(cursor, op) && is_args_valid(cursor, vm, op))
+			if (are_args_types_valid(cursor, op) && are_args_valid(cursor, vm, op))
 				op->func(vm, cursor);
 			else
 				cursor->step +=  calc_step(cursor, op);
 		}
 		else
 			cursor->step = OP_CODE_LEN;
-		move_cursor(vm, cursor);/* 
-		ft_putnbr(cursor->id);
-		ft_putchar(' '); */
+		move_cursor(vm, cursor);
 	}
 }
 
@@ -108,34 +94,6 @@ static void		delete_dead_cursors(t_vm *vm)
 			current = current->next;
 		}
 }
-
-/* void	delete_dead_cursors(t_vm *vm)
-{
-	t_cursor	*cursor;
-	t_cursor	*delete;
-	t_cursor	*prev;
-
-	cursor = vm->cursors;
-	while (cursor)
-	{
-		delete = cursor;
-		if ((vm->cycles_to_die <= 0 || vm->cycles -
-		cursor->last_live >= vm->cycles_to_die) && vm->cursors_num > 0)
-		{
-			cursor = cursor->next;
-			if (vm->cursors == delete)
-				vm->cursors = cursor;
-			if (prev != NULL)
-			ft_memdel((void **)&delete);
-		}
-		else
-		{
-			prev = cursor;
-			cursor = cursor->next;
-		}
-		vm->cursors_num--;
-	}
-} */
 
 void	update_lives(t_vm *vm)
 {

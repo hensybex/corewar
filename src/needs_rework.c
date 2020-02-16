@@ -24,7 +24,7 @@ void		parse_types_code(t_vm *vm, t_cursor *cursor, t_op *op)
 		cursor->args_types[0] = op->args_types[0];
 }
 
-t_bool			is_arg_types_valid(t_cursor *cursor, t_op *op)
+t_bool			are_args_types_valid(t_cursor *cursor, t_op *op)
 {
 	int32_t i;
 
@@ -78,7 +78,7 @@ inline int8_t	get_byte(t_vm *vm, int32_t pc, int32_t step)
 	return (vm->arena[calc_addr(pc + step)]);
 }
 
-t_bool			is_args_valid(t_cursor *cursor, t_vm *vm, t_op *op)
+t_bool			are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op)
 {
 	int32_t		i;
 	uint32_t	step;
