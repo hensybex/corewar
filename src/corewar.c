@@ -1,7 +1,7 @@
 #include "../includes/corewar.h"
 
 
-void		print_intro(t_player **p, int32_t num)
+void		introduction(t_player **p, int32_t num)
 {
 	int32_t i;
 
@@ -15,7 +15,7 @@ void		print_intro(t_player **p, int32_t num)
 	}
 }
 
-void	print_last(t_vm *vm)
+void	print_winner(t_vm *vm)
 {
 	printf("Contestant %d, \"%s\", has won !\n",
 	modul(vm->last_alive->id), vm->last_alive->name);
@@ -71,9 +71,9 @@ int			main(int ac, char **av)
 		parse_corewar_args(ac, av, vm);
 		entry_arena(vm);
 		init_cursors(vm);
-		print_intro(vm->players, vm->players_num);
+		introduction(vm->players, vm->players_num);
 		battle(vm);
-		print_last(vm);
+		print_winner(vm);
 		free_vm(&vm);
 	}
 	return (0);

@@ -95,7 +95,7 @@ static void		delete_dead_cursors(t_vm *vm)
 		}
 }
 
-void	update_lives(t_vm *vm)
+void	update_lives_num(t_vm *vm)
 {
 	int32_t		i;
 
@@ -109,7 +109,7 @@ void	update_lives(t_vm *vm)
 	vm->lives_num = 0;
 }
 
-void	cycles_to_die_check(t_vm *vm)
+void	cycles_to_die_handler(t_vm *vm)
 {
 	vm->checks_num++;
 	delete_dead_cursors(vm);
@@ -118,7 +118,7 @@ void	cycles_to_die_check(t_vm *vm)
 		vm->cycles_to_die -= CYCLE_DELTA;
 		vm->checks_num = 0;
 	}
-	update_lives(vm);
+	update_lives_num(vm);
 	vm->cycles_after_check = 0;
 }
 
@@ -153,6 +153,6 @@ void	battle(t_vm *vm)
 		}
 		run_cycles(vm);
 		if (vm->cycles_to_die == vm->cycles_after_check || vm->cycles_to_die <= 0)
-			cycles_to_die_check(vm);
+			cycles_to_die_handler(vm);
 	}
 }
