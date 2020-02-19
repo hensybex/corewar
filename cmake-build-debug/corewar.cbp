@@ -363,7 +363,10 @@
 		<Unit filename="/Users/enikole/workspace/corewar/src/init_cursors.c">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/enikole/workspace/corewar/src/operations/op_live.c">
+		<Unit filename="/Users/enikole/workspace/corewar/src/operations/ld.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/enikole/workspace/corewar/src/operations/live.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/enikole/workspace/corewar/CMakeLists.txt">

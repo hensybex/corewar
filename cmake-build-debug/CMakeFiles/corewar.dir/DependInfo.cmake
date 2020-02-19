@@ -94,7 +94,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/enikole/workspace/corewar/src/corewar.c" "/Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/corewar.dir/src/corewar.c.o"
   "/Users/enikole/workspace/corewar/src/error.c" "/Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/corewar.dir/src/error.c.o"
   "/Users/enikole/workspace/corewar/src/init_cursors.c" "/Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/corewar.dir/src/init_cursors.c.o"
-  "/Users/enikole/workspace/corewar/src/operations/op_live.c" "/Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/corewar.dir/src/operations/op_live.c.o"
+  "/Users/enikole/workspace/corewar/src/operations/ld.c" "/Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/corewar.dir/src/operations/ld.c.o"
+  "/Users/enikole/workspace/corewar/src/operations/live.c" "/Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/corewar.dir/src/operations/live.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

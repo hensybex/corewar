@@ -89,7 +89,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/corewar.dir/src/corewar.c.o"
   "CMakeFiles/corewar.dir/src/error.c.o"
   "CMakeFiles/corewar.dir/src/init_cursors.c.o"
-  "CMakeFiles/corewar.dir/src/operations/op_live.c.o"
+  "CMakeFiles/corewar.dir/src/operations/ld.c.o"
+  "CMakeFiles/corewar.dir/src/operations/live.c.o"
   "corewar"
   "corewar.pdb"
 )

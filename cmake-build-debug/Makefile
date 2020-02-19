@@ -2553,32 +2553,59 @@ src/init_cursors.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/init_cursors.c.s
 .PHONY : src/init_cursors.c.s
 
-src/operations/op_live.o: src/operations/op_live.c.o
+src/operations/ld.o: src/operations/ld.c.o
 
-.PHONY : src/operations/op_live.o
+.PHONY : src/operations/ld.o
 
 # target to build an object file
-src/operations/op_live.c.o:
-	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/op_live.c.o
-.PHONY : src/operations/op_live.c.o
+src/operations/ld.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ld.c.o
+.PHONY : src/operations/ld.c.o
 
-src/operations/op_live.i: src/operations/op_live.c.i
+src/operations/ld.i: src/operations/ld.c.i
 
-.PHONY : src/operations/op_live.i
+.PHONY : src/operations/ld.i
 
 # target to preprocess a source file
-src/operations/op_live.c.i:
-	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/op_live.c.i
-.PHONY : src/operations/op_live.c.i
+src/operations/ld.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ld.c.i
+.PHONY : src/operations/ld.c.i
 
-src/operations/op_live.s: src/operations/op_live.c.s
+src/operations/ld.s: src/operations/ld.c.s
 
-.PHONY : src/operations/op_live.s
+.PHONY : src/operations/ld.s
 
 # target to generate assembly for a file
-src/operations/op_live.c.s:
-	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/op_live.c.s
-.PHONY : src/operations/op_live.c.s
+src/operations/ld.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ld.c.s
+.PHONY : src/operations/ld.c.s
+
+src/operations/live.o: src/operations/live.c.o
+
+.PHONY : src/operations/live.o
+
+# target to build an object file
+src/operations/live.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/live.c.o
+.PHONY : src/operations/live.c.o
+
+src/operations/live.i: src/operations/live.c.i
+
+.PHONY : src/operations/live.i
+
+# target to preprocess a source file
+src/operations/live.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/live.c.i
+.PHONY : src/operations/live.c.i
+
+src/operations/live.s: src/operations/live.c.s
+
+.PHONY : src/operations/live.s
+
+# target to generate assembly for a file
+src/operations/live.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/live.c.s
+.PHONY : src/operations/live.c.s
 
 # Help Target
 help:
@@ -2859,9 +2886,12 @@ help:
 	@echo "... src/init_cursors.o"
 	@echo "... src/init_cursors.i"
 	@echo "... src/init_cursors.s"
-	@echo "... src/operations/op_live.o"
-	@echo "... src/operations/op_live.i"
-	@echo "... src/operations/op_live.s"
+	@echo "... src/operations/ld.o"
+	@echo "... src/operations/ld.i"
+	@echo "... src/operations/ld.s"
+	@echo "... src/operations/live.o"
+	@echo "... src/operations/live.i"
+	@echo "... src/operations/live.s"
 .PHONY : help
 
 

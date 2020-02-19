@@ -99,4 +99,4 @@ add_executable(corewar
         libft/libft.h
         src/corewar.c
         src/error.c
-        src/init_cursors.c src/operations/op_live.c)
+        src/init_cursors.c src/operations/live.c src/operations/ld.c)
