@@ -19,7 +19,7 @@ void        fork(t_vm *vm, t_cursor *cursor)
 	t_cursor	*copy;
 
 
-	arg_1 = (int32_t)ft_memcpy(ft_memalloc(IND_SIZE), &vm->arena[cursor->pc], IND_SIZE);
-	copy = (t_cursor *)ft_memcpy(ft_memalloc(sizeof(t_cursor)), cursor, sizeof(t_cursor));
+	arg_1 = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc], DIR_SIZE);
+	copy = (t_cursor *)ft_memalloc(sizeof(t_cursor));
 	free(arg_1);
 }

@@ -15,9 +15,6 @@
 
 void        and(t_vm *vm, t_cursor *cursor)
 {
-	//
-	// !!! OPTIMISATION NEEDED !!!
-	//
 	int32_t    	arg_1;
 	int32_t     arg_2;
 	int32_t 	r3;
