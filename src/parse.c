@@ -18,7 +18,7 @@ void		add_player(t_player **list, t_player *new)
 	}
 }
 
-void	*mem_cpy(void *dst, const void *src, size_t n)
+void		*mem_cpy(void *dst, const void *src, size_t n)
 {
 	char			*ptr1;
 	char			*ptr2;
@@ -37,7 +37,7 @@ void	*mem_cpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-int32_t			parse_4_byte(int fd)
+int32_t		parse_4_byte(int fd)
 {
 	ssize_t		size;
 	uint8_t		buff[4];
@@ -68,7 +68,7 @@ char		*parse_str(int fd, size_t len)
 	return (buff);
 }
 
-uint8_t	*parse_exec_code(int fd, size_t len)
+uint8_t		*parse_exec_code(int fd, size_t len)
 {
 	ssize_t	size;
 	uint8_t	*buff;
@@ -83,7 +83,7 @@ uint8_t	*parse_exec_code(int fd, size_t len)
 	return (buff);
 }
 
-t_player		*parse_champion(char *str, int id)
+t_player	*parse_champion(char *str, int id)
 {
 	t_player	*player;
 	int			fd;
@@ -96,7 +96,8 @@ t_player		*parse_champion(char *str, int id)
 	player->name = parse_str(fd, PROG_NAME_LENGTH);
 	if (parse_4_byte(fd) != 0)
 		error("No separator - NULL");
-	if ((player->code_size = parse_4_byte(fd)) < 0 || player->code_size > CHAMP_MAX_SIZE)
+	if ((player->code_size = parse_4_byte(fd)) < 0
+	|| player->code_size > CHAMP_MAX_SIZE)
 		error("Invalid code size");
 	player->comment = parse_str(fd, COMMENT_LENGTH);
 	if (parse_4_byte(fd) != 0)
@@ -123,7 +124,7 @@ t_player	*find_player(t_player *list, int32_t id)
 	return (player);
 }
 
-void	update_players_id(t_player *list)
+void		update_players_id(t_player *list)
 {
 	t_player	*player;
 	int32_t		id;
@@ -142,7 +143,7 @@ void	update_players_id(t_player *list)
 	}
 }
 
-void	set_players(t_vm *vm, t_player *list)
+void		set_players(t_vm *vm, t_player *list)
 {
 	int32_t id;
 
@@ -184,14 +185,14 @@ void		parse_file(int *ac, char ***av, t_vm *vm, t_player **list)
 	}
 }
 
-void	parse_aff(int *ac, char ***av, t_vm *vm)
+void		parse_aff(int *ac, char ***av, t_vm *vm)
 {
-	vm->display_aff = 1; // поменять на 1
+	vm->display_aff = 1;
 	(*ac)--;
 	(*av)++;
 }
 
-void	parse_dump(int *ac, char ***av, t_vm *vm)
+void		parse_dump(int *ac, char ***av, t_vm *vm)
 {
 	if (!vm->dump_print_mode && *ac >= 2 && ft_max_min_int(*(*av + 1)))
 	{
@@ -213,7 +214,6 @@ void		parse_corewar_args(int ac, char **av, t_vm *vm)
 	t_player *list;
 
 	list = NULL;
-
 	while (ac >= 1)
 	{
 		if (!ft_strcmp(*av, "-dump") || !ft_strcmp(*av, "-d"))

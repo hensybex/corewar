@@ -17,7 +17,7 @@ t_vm		*init_vm(void)
 	vm->checks_num = 0;
 	vm->dump_cycle = -1;
 	vm->dump_print_mode = 0;
-	vm->display_aff = 0; // поменять на 0
+	vm->display_aff = 0;
 	return (vm);
 }
 
@@ -30,7 +30,8 @@ void		entry_arena(t_vm *vm)
 	pc = 0;
 	while (i < vm->players_num)
 	{
-		ft_memcpy(&(vm->arena[pc]), vm->players[i]->code, vm->players[i]->code_size);
+		ft_memcpy(&(vm->arena[pc]),
+			vm->players[i]->code, vm->players[i]->code_size);
 		pc += MEM_SIZE / vm->players_num;
 		i++;
 	}

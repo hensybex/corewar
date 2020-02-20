@@ -1,6 +1,6 @@
 #include "../includes/corewar.h"
 
-int			ft_max_min_int(char *buff)
+int	ft_max_min_int(char *buff)
 {
 	if (*buff != '-' && ft_strlen(buff) == ft_strlen("2147483647"))
 	{
@@ -19,7 +19,7 @@ int			ft_max_min_int(char *buff)
 	return (1);
 }
 
-int			is_cor(char *av)
+int	is_cor(char *av)
 {
 	if (av && ft_strstr(av, ".cor") && (ft_strlen(av) >= 4))
 		return (1);

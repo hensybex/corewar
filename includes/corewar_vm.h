@@ -2,7 +2,6 @@
 
 # define COREWAR_VM_H
 
-
 # include "../libft/libft.h"
 # include "op.h"
 

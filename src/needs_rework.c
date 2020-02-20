@@ -40,7 +40,7 @@ int			are_args_types_valid(t_cursor *cursor, t_op *op)
 
 static int	is_register(t_vm *vm, int32_t pc, int32_t step)
 {
-	int8_t r_id;
+	int8_t	r_id;
 
 	r_id = get_byte(vm, pc, step);
 	return (int)(r_id >= 1 && r_id <= REG_NUMBER);
@@ -73,7 +73,7 @@ uint32_t	calc_step(t_cursor *cursor, t_op *op)
 	return (step);
 }
 
-int8_t	get_byte(t_vm *vm, int32_t pc, int32_t step)
+int8_t		get_byte(t_vm *vm, int32_t pc, int32_t step)
 {
 	return (vm->arena[calc_addr(pc + step)]);
 }

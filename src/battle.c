@@ -1,6 +1,6 @@
 #include "../includes/corewar.h"
 
-void	run_cycles(t_vm *vm)
+void		run_cycles(t_vm *vm)
 {
 	t_cursor	*cursor;
 
@@ -22,14 +22,14 @@ int32_t		calc_addr(int32_t addr)
 	return (addr);
 }
 
-void	update_op_code(t_vm *vm, t_cursor *cursor)
+void		update_op_code(t_vm *vm, t_cursor *cursor)
 {
 	cursor->op_code = vm->arena[cursor->pc];
 	if (vm->arena[cursor->pc] >= 1 && vm->arena[cursor->pc] <= 16)
 		cursor->cycles_to_exec = g_op[cursor->op_code - 1].cycles;
 }
 
-void	move_cursor(t_cursor *cursor)
+void		move_cursor(t_cursor *cursor)
 {
 	cursor->pc += cursor->step;
 	cursor->pc = calc_addr(cursor->pc);
@@ -37,7 +37,7 @@ void	move_cursor(t_cursor *cursor)
 	ft_bzero(cursor->args_types, 3);
 }
 
-void	run_operation(t_vm *vm, t_cursor *cursor)
+void		run_operation(t_vm *vm, t_cursor *cursor)
 {
 	t_op	*op;
 
@@ -53,10 +53,11 @@ void	run_operation(t_vm *vm, t_cursor *cursor)
 		if (op != NULL)
 		{
 			parse_types_code(vm, cursor, op);
-			if (are_args_types_valid(cursor, op) && are_args_valid(cursor, vm, op))
+			if (are_args_types_valid(cursor, op)
+				&& are_args_valid(cursor, vm, op))
 				op->func(vm, cursor);
 			else
-				cursor->step +=  calc_step(cursor, op);
+				cursor->step += calc_step(cursor, op);
 		}
 		else
 			cursor->step = OP_CODE_LEN;
@@ -70,7 +71,7 @@ static int	is_dead(t_vm *vm, t_cursor *cursor)
 			|| vm->cycles - cursor->last_live >= vm->cycles_to_die);
 }
 
-static void		delete_dead_cursors(t_vm *vm)
+static void	delete_dead_cursors(t_vm *vm)
 {
 	t_cursor	*previous;
 	t_cursor	*current;
@@ -95,7 +96,7 @@ static void		delete_dead_cursors(t_vm *vm)
 		}
 }
 
-void	update_lives_num(t_vm *vm)
+void		update_lives_num(t_vm *vm)
 {
 	int32_t		i;
 
@@ -109,7 +110,7 @@ void	update_lives_num(t_vm *vm)
 	vm->lives_num = 0;
 }
 
-void	cycles_to_die_handler(t_vm *vm)
+void		cycles_to_die_handler(t_vm *vm)
 {
 	vm->checks_num++;
 	delete_dead_cursors(vm);
@@ -134,7 +135,7 @@ void		print_arena(uint8_t *arena, int print_mode)
 		j = 0;
 		while (j < print_mode)
 		{
-			printf("%.2x ", arena[i + j]);//прикрутить принтф
+			printf("%.2x ", arena[i + j]);
 			j++;
 		}
 		printf("\n");
@@ -142,7 +143,7 @@ void		print_arena(uint8_t *arena, int print_mode)
 	}
 }
 
-void	battle(t_vm *vm)
+void		battle(t_vm *vm)
 {
 	while (vm->cursors_num != 0)
 	{
@@ -152,7 +153,8 @@ void	battle(t_vm *vm)
 			exit(0);
 		}
 		run_cycles(vm);
-		if (vm->cycles_to_die == vm->cycles_after_check || vm->cycles_to_die <= 0)
+		if (vm->cycles_to_die == vm->cycles_after_check
+			|| vm->cycles_to_die <= 0)
 			cycles_to_die_handler(vm);
 	}
 }

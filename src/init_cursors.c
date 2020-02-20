@@ -16,7 +16,7 @@ t_cursor	new_cursor(t_vm *vm, int player_num, int pc)
 	return (buff);
 }
 
-void	add_cursorr(t_cursor **list, t_cursor *new)
+void		add_cursorr(t_cursor **list, t_cursor *new)
 {
 	if (new)
 		new->next = *list;
@@ -42,7 +42,7 @@ t_cursor	*init_cursor(t_player *player, int32_t pc)
 	return (cursor);
 }
 
-void	init_cursors(t_vm *vm)
+void		init_cursors(t_vm *vm)
 {
 	int32_t		id;
 	uint32_t	pc;
