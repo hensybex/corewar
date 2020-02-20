@@ -14,4 +14,8 @@
 #include "libft.h"
 
 void        ldi(t_vm *vm, t_cursor *cursor)
-{}
+{
+	// (...) watch and.c
+	// !!! OPTIMISATION NEEDED !!!
+	//
+}

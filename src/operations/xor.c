@@ -14,4 +14,8 @@
 #include "libft.h"
 
 void        xor(t_vm *vm, t_cursor *cursor)
-{}
+{
+	// (...) watch and.c
+	// !!! OPTIMISATION NEEDED !!!
+	//
+}

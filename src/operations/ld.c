@@ -33,7 +33,7 @@ void            ld(t_vm *vm, t_cursor *cursor)
         arg_1 = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[pc], DIR_SIZE);
     }
     cursor->reg[arg_2 - 1] = arg_1;
-    cursor->carry = (arg_1 == 0) ? (1) : (0);
+    cursor->carry = (arg_1) ? (0) : (1);
     free(arg_1);
     free(arg_2);
 }

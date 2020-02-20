@@ -28,8 +28,8 @@ void        st(t_vm *vm, t_cursor *cursor)
     else if (cursor->args_types[1] & T_IND)
     {
         arg_2 = (int32_t)ft_memcpy(ft_memalloc(IND_SIZE), &vm->arena[cursor->pc + 1 + IND_SIZE], IND_SIZE);
-        pc = cursor->pc + arg_2 % IND_MOD;
-        
+        pc = cursor->pc + arg_2 % IDX_MOD;
+		vm->arena[pc] = cursor->reg[arg_1 - 1];
     }
     free(arg_1);
     free(arg_2);

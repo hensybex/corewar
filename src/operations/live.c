@@ -19,6 +19,7 @@ void    		live(t_vm *vm, t_cursor *cursor)
 	t_player    *player;
 
     cursor->last_live = vm->cycles;
+    //cursor->reg[0] = ??
     arg = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc], DIR_SIZE);
     if (arg < 0 && arg >= (-1) * vm->players_num)
     {

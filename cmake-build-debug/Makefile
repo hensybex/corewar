@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/enikole/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Users/enikole/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/enikole/workspace/corewar
+CMAKE_SOURCE_DIR = /Users/yakimkina/workspace/21_SCHOOL/corewar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/enikole/workspace/corewar/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/enikole/workspace/corewar/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Users/enikole/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Users/enikole/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles /Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/CMakeFiles /Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/enikole/workspace/corewar/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yakimkina/workspace/21_SCHOOL/corewar/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2553,6 +2553,114 @@ src/init_cursors.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/init_cursors.c.s
 .PHONY : src/init_cursors.c.s
 
+src/operations/add.o: src/operations/add.c.o
+
+.PHONY : src/operations/add.o
+
+# target to build an object file
+src/operations/add.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/add.c.o
+.PHONY : src/operations/add.c.o
+
+src/operations/add.i: src/operations/add.c.i
+
+.PHONY : src/operations/add.i
+
+# target to preprocess a source file
+src/operations/add.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/add.c.i
+.PHONY : src/operations/add.c.i
+
+src/operations/add.s: src/operations/add.c.s
+
+.PHONY : src/operations/add.s
+
+# target to generate assembly for a file
+src/operations/add.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/add.c.s
+.PHONY : src/operations/add.c.s
+
+src/operations/aff.o: src/operations/aff.c.o
+
+.PHONY : src/operations/aff.o
+
+# target to build an object file
+src/operations/aff.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/aff.c.o
+.PHONY : src/operations/aff.c.o
+
+src/operations/aff.i: src/operations/aff.c.i
+
+.PHONY : src/operations/aff.i
+
+# target to preprocess a source file
+src/operations/aff.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/aff.c.i
+.PHONY : src/operations/aff.c.i
+
+src/operations/aff.s: src/operations/aff.c.s
+
+.PHONY : src/operations/aff.s
+
+# target to generate assembly for a file
+src/operations/aff.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/aff.c.s
+.PHONY : src/operations/aff.c.s
+
+src/operations/and.o: src/operations/and.c.o
+
+.PHONY : src/operations/and.o
+
+# target to build an object file
+src/operations/and.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/and.c.o
+.PHONY : src/operations/and.c.o
+
+src/operations/and.i: src/operations/and.c.i
+
+.PHONY : src/operations/and.i
+
+# target to preprocess a source file
+src/operations/and.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/and.c.i
+.PHONY : src/operations/and.c.i
+
+src/operations/and.s: src/operations/and.c.s
+
+.PHONY : src/operations/and.s
+
+# target to generate assembly for a file
+src/operations/and.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/and.c.s
+.PHONY : src/operations/and.c.s
+
+src/operations/fork.o: src/operations/fork.c.o
+
+.PHONY : src/operations/fork.o
+
+# target to build an object file
+src/operations/fork.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/fork.c.o
+.PHONY : src/operations/fork.c.o
+
+src/operations/fork.i: src/operations/fork.c.i
+
+.PHONY : src/operations/fork.i
+
+# target to preprocess a source file
+src/operations/fork.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/fork.c.i
+.PHONY : src/operations/fork.c.i
+
+src/operations/fork.s: src/operations/fork.c.s
+
+.PHONY : src/operations/fork.s
+
+# target to generate assembly for a file
+src/operations/fork.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/fork.c.s
+.PHONY : src/operations/fork.c.s
+
 src/operations/ld.o: src/operations/ld.c.o
 
 .PHONY : src/operations/ld.o
@@ -2580,6 +2688,60 @@ src/operations/ld.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ld.c.s
 .PHONY : src/operations/ld.c.s
 
+src/operations/ldi.o: src/operations/ldi.c.o
+
+.PHONY : src/operations/ldi.o
+
+# target to build an object file
+src/operations/ldi.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ldi.c.o
+.PHONY : src/operations/ldi.c.o
+
+src/operations/ldi.i: src/operations/ldi.c.i
+
+.PHONY : src/operations/ldi.i
+
+# target to preprocess a source file
+src/operations/ldi.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ldi.c.i
+.PHONY : src/operations/ldi.c.i
+
+src/operations/ldi.s: src/operations/ldi.c.s
+
+.PHONY : src/operations/ldi.s
+
+# target to generate assembly for a file
+src/operations/ldi.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/ldi.c.s
+.PHONY : src/operations/ldi.c.s
+
+src/operations/lfork.o: src/operations/lfork.c.o
+
+.PHONY : src/operations/lfork.o
+
+# target to build an object file
+src/operations/lfork.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lfork.c.o
+.PHONY : src/operations/lfork.c.o
+
+src/operations/lfork.i: src/operations/lfork.c.i
+
+.PHONY : src/operations/lfork.i
+
+# target to preprocess a source file
+src/operations/lfork.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lfork.c.i
+.PHONY : src/operations/lfork.c.i
+
+src/operations/lfork.s: src/operations/lfork.c.s
+
+.PHONY : src/operations/lfork.s
+
+# target to generate assembly for a file
+src/operations/lfork.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lfork.c.s
+.PHONY : src/operations/lfork.c.s
+
 src/operations/live.o: src/operations/live.c.o
 
 .PHONY : src/operations/live.o
@@ -2606,6 +2768,222 @@ src/operations/live.s: src/operations/live.c.s
 src/operations/live.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/live.c.s
 .PHONY : src/operations/live.c.s
+
+src/operations/lld.o: src/operations/lld.c.o
+
+.PHONY : src/operations/lld.o
+
+# target to build an object file
+src/operations/lld.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lld.c.o
+.PHONY : src/operations/lld.c.o
+
+src/operations/lld.i: src/operations/lld.c.i
+
+.PHONY : src/operations/lld.i
+
+# target to preprocess a source file
+src/operations/lld.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lld.c.i
+.PHONY : src/operations/lld.c.i
+
+src/operations/lld.s: src/operations/lld.c.s
+
+.PHONY : src/operations/lld.s
+
+# target to generate assembly for a file
+src/operations/lld.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lld.c.s
+.PHONY : src/operations/lld.c.s
+
+src/operations/lldi.o: src/operations/lldi.c.o
+
+.PHONY : src/operations/lldi.o
+
+# target to build an object file
+src/operations/lldi.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lldi.c.o
+.PHONY : src/operations/lldi.c.o
+
+src/operations/lldi.i: src/operations/lldi.c.i
+
+.PHONY : src/operations/lldi.i
+
+# target to preprocess a source file
+src/operations/lldi.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lldi.c.i
+.PHONY : src/operations/lldi.c.i
+
+src/operations/lldi.s: src/operations/lldi.c.s
+
+.PHONY : src/operations/lldi.s
+
+# target to generate assembly for a file
+src/operations/lldi.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/lldi.c.s
+.PHONY : src/operations/lldi.c.s
+
+src/operations/or.o: src/operations/or.c.o
+
+.PHONY : src/operations/or.o
+
+# target to build an object file
+src/operations/or.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/or.c.o
+.PHONY : src/operations/or.c.o
+
+src/operations/or.i: src/operations/or.c.i
+
+.PHONY : src/operations/or.i
+
+# target to preprocess a source file
+src/operations/or.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/or.c.i
+.PHONY : src/operations/or.c.i
+
+src/operations/or.s: src/operations/or.c.s
+
+.PHONY : src/operations/or.s
+
+# target to generate assembly for a file
+src/operations/or.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/or.c.s
+.PHONY : src/operations/or.c.s
+
+src/operations/st.o: src/operations/st.c.o
+
+.PHONY : src/operations/st.o
+
+# target to build an object file
+src/operations/st.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/st.c.o
+.PHONY : src/operations/st.c.o
+
+src/operations/st.i: src/operations/st.c.i
+
+.PHONY : src/operations/st.i
+
+# target to preprocess a source file
+src/operations/st.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/st.c.i
+.PHONY : src/operations/st.c.i
+
+src/operations/st.s: src/operations/st.c.s
+
+.PHONY : src/operations/st.s
+
+# target to generate assembly for a file
+src/operations/st.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/st.c.s
+.PHONY : src/operations/st.c.s
+
+src/operations/sti.o: src/operations/sti.c.o
+
+.PHONY : src/operations/sti.o
+
+# target to build an object file
+src/operations/sti.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/sti.c.o
+.PHONY : src/operations/sti.c.o
+
+src/operations/sti.i: src/operations/sti.c.i
+
+.PHONY : src/operations/sti.i
+
+# target to preprocess a source file
+src/operations/sti.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/sti.c.i
+.PHONY : src/operations/sti.c.i
+
+src/operations/sti.s: src/operations/sti.c.s
+
+.PHONY : src/operations/sti.s
+
+# target to generate assembly for a file
+src/operations/sti.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/sti.c.s
+.PHONY : src/operations/sti.c.s
+
+src/operations/sub.o: src/operations/sub.c.o
+
+.PHONY : src/operations/sub.o
+
+# target to build an object file
+src/operations/sub.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/sub.c.o
+.PHONY : src/operations/sub.c.o
+
+src/operations/sub.i: src/operations/sub.c.i
+
+.PHONY : src/operations/sub.i
+
+# target to preprocess a source file
+src/operations/sub.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/sub.c.i
+.PHONY : src/operations/sub.c.i
+
+src/operations/sub.s: src/operations/sub.c.s
+
+.PHONY : src/operations/sub.s
+
+# target to generate assembly for a file
+src/operations/sub.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/sub.c.s
+.PHONY : src/operations/sub.c.s
+
+src/operations/xor.o: src/operations/xor.c.o
+
+.PHONY : src/operations/xor.o
+
+# target to build an object file
+src/operations/xor.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/xor.c.o
+.PHONY : src/operations/xor.c.o
+
+src/operations/xor.i: src/operations/xor.c.i
+
+.PHONY : src/operations/xor.i
+
+# target to preprocess a source file
+src/operations/xor.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/xor.c.i
+.PHONY : src/operations/xor.c.i
+
+src/operations/xor.s: src/operations/xor.c.s
+
+.PHONY : src/operations/xor.s
+
+# target to generate assembly for a file
+src/operations/xor.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/xor.c.s
+.PHONY : src/operations/xor.c.s
+
+src/operations/zjmp.o: src/operations/zjmp.c.o
+
+.PHONY : src/operations/zjmp.o
+
+# target to build an object file
+src/operations/zjmp.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/zjmp.c.o
+.PHONY : src/operations/zjmp.c.o
+
+src/operations/zjmp.i: src/operations/zjmp.c.i
+
+.PHONY : src/operations/zjmp.i
+
+# target to preprocess a source file
+src/operations/zjmp.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/zjmp.c.i
+.PHONY : src/operations/zjmp.c.i
+
+src/operations/zjmp.s: src/operations/zjmp.c.s
+
+.PHONY : src/operations/zjmp.s
+
+# target to generate assembly for a file
+src/operations/zjmp.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/operations/zjmp.c.s
+.PHONY : src/operations/zjmp.c.s
 
 # Help Target
 help:
@@ -2886,12 +3264,54 @@ help:
 	@echo "... src/init_cursors.o"
 	@echo "... src/init_cursors.i"
 	@echo "... src/init_cursors.s"
+	@echo "... src/operations/add.o"
+	@echo "... src/operations/add.i"
+	@echo "... src/operations/add.s"
+	@echo "... src/operations/aff.o"
+	@echo "... src/operations/aff.i"
+	@echo "... src/operations/aff.s"
+	@echo "... src/operations/and.o"
+	@echo "... src/operations/and.i"
+	@echo "... src/operations/and.s"
+	@echo "... src/operations/fork.o"
+	@echo "... src/operations/fork.i"
+	@echo "... src/operations/fork.s"
 	@echo "... src/operations/ld.o"
 	@echo "... src/operations/ld.i"
 	@echo "... src/operations/ld.s"
+	@echo "... src/operations/ldi.o"
+	@echo "... src/operations/ldi.i"
+	@echo "... src/operations/ldi.s"
+	@echo "... src/operations/lfork.o"
+	@echo "... src/operations/lfork.i"
+	@echo "... src/operations/lfork.s"
 	@echo "... src/operations/live.o"
 	@echo "... src/operations/live.i"
 	@echo "... src/operations/live.s"
+	@echo "... src/operations/lld.o"
+	@echo "... src/operations/lld.i"
+	@echo "... src/operations/lld.s"
+	@echo "... src/operations/lldi.o"
+	@echo "... src/operations/lldi.i"
+	@echo "... src/operations/lldi.s"
+	@echo "... src/operations/or.o"
+	@echo "... src/operations/or.i"
+	@echo "... src/operations/or.s"
+	@echo "... src/operations/st.o"
+	@echo "... src/operations/st.i"
+	@echo "... src/operations/st.s"
+	@echo "... src/operations/sti.o"
+	@echo "... src/operations/sti.i"
+	@echo "... src/operations/sti.s"
+	@echo "... src/operations/sub.o"
+	@echo "... src/operations/sub.i"
+	@echo "... src/operations/sub.s"
+	@echo "... src/operations/xor.o"
+	@echo "... src/operations/xor.i"
+	@echo "... src/operations/xor.s"
+	@echo "... src/operations/zjmp.o"
+	@echo "... src/operations/zjmp.i"
+	@echo "... src/operations/zjmp.s"
 .PHONY : help
 
 
