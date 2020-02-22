@@ -18,8 +18,8 @@ void        fork(t_vm *vm, t_cursor *cursor)
 	int32_t 	arg_1;
 	t_cursor	*copy;
 
-
-	arg_1 = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc], DIR_SIZE);
-	copy = (t_cursor *)ft_memalloc(sizeof(t_cursor));
-	free(arg_1);
+	cursor->step += OP_CODE_LEN;
+	arg_1 = get_value(vm, cursor, 0, 1);
+	//need to duplicate
+	vm->cursors_num++;
 }

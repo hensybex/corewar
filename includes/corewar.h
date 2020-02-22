@@ -10,6 +10,11 @@
 #define print_error ft_putendl("--------------------------HEWSTON, A PROBLEM UP HERE!!!--------------------------");
 #define print_start ft_putendl("--------------------------START--------------------------");
 #define print_end ft_putendl("--------------------------END--------------------------");
+
+#define OP_CODE_LEN		1
+#define	ARG_CODE_LEN	1
+#define REG_LEN			1
+
 typedef struct			s_player
 {
 	int32_t				id;
@@ -62,5 +67,6 @@ typedef struct			s_vm
 
 void	error(char *str);
 void	init_cursors(t_vm *vm);
-
+int32_t	get_value(t_vm *vm, t_cursor *cursor, uint8_t index_arg, char is_mod);
+int32_t get_address(int32_t curr);
 #endif

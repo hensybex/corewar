@@ -13,9 +13,16 @@
 #include "corewar.h"
 #include "libft.h"
 
-void        sti(t_vm *vm, t_cursor *cursor)
+void        	sti(t_vm *vm, t_cursor *cursor)
 {
-	// (...) watch and.c
-	// !!! OPTIMISATION NEEDED !!!
-	//
+	int32_t 	r1;
+	int32_t 	adr_1;
+	int32_t 	adr_2;
+
+	cursor->step += (OP_CODE_LEN + ARG_CODE_LEN);
+	r1 = get_value(vm, cursor, 0, 0);
+	cursor->step += REG_LEN;
+	adr_1 = get_value(vm, cursor, 1, 1);
+	adr_2 = get_value(vm, cursor, 2, 1);
+	//smth to do
 }

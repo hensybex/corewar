@@ -17,25 +17,13 @@ void        and(t_vm *vm, t_cursor *cursor)
 {
 	int32_t    	arg_1;
 	int32_t     arg_2;
-	int32_t 	r3;
+	int32_t		r3;
 
-	if (cursor->args_types[0] & REG_CODE)
-		arg_1 = (int32_t)ft_memcpy(ft_memalloc(REG_SIZE), &vm->arena[cursor->pc + 1], REG_SIZE);
-	else if (cursor->args_types[0] & DIR_CODE)
-		arg_1 = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc + 1], DIR_SIZE);
-	else if (cursor->args_types[0] & IND_CODE)
-		arg_1 = (int32_t)ft_memcpy(ft_memalloc(IND_SIZE), &vm->arena[cursor->pc + 1], IND_SIZE);
-	if (cursor->args_types[1] & REG_CODE)
-		arg_1 = (int32_t)ft_memcpy(ft_memalloc(REG_SIZE), &vm->arena[cursor->pc + 1], REG_SIZE);
-	else if (cursor->args_types[1] & DIR_CODE)
-		arg_1 = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc + 1], DIR_SIZE);
-	else if (cursor->args_types[1] & IND_CODE)
-		arg_1 = (int32_t)ft_memcpy(ft_memalloc(IND_SIZE), &vm->arena[cursor->pc + 1], IND_SIZE);
-
-	r3 = (int32_t)ft_memcpy(ft_memalloc(REG_SIZE), &vm->arena[cursor->pc + 1 + 2 * REG_SIZE], REG_SIZE);
-
+	cursor->step += (OP_CODE_LEN + ARG_CODE_LEN);
+	arg_1 = get_value(vm, cursor, 0, 1);
+	arg_2 = get_value(vm, cursor, 1, 1);
+	r3 = (int8_t)(vm->arena[get_address(cursor->pc + cursor->step)];
+	cursor->reg[r3 - 1] = arg_1 & arg_2;
 	cursor->carry = (cursor->reg[r3 - 1]) ? (0) : (1);
-	free(arg_1);
-	free(arg_2);
-	free(r3);
+	cursor->step += REG_LEN;
 }

@@ -93,6 +93,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/corewar.dir/src/operations/aff.c.o"
   "CMakeFiles/corewar.dir/src/operations/and.c.o"
   "CMakeFiles/corewar.dir/src/operations/fork.c.o"
+  "CMakeFiles/corewar.dir/src/operations/get_x.c.o"
   "CMakeFiles/corewar.dir/src/operations/ld.c.o"
   "CMakeFiles/corewar.dir/src/operations/ldi.c.o"
   "CMakeFiles/corewar.dir/src/operations/lfork.c.o"

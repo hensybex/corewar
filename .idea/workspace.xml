@@ -13,6 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="49751713-521a-4e61-abbf-4604f89a5181" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
@@ -26,14 +27,29 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/corewar.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/corewar.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/corewar.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/operations/aff.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/aff.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/add.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/add.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/operations/and.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/and.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/operations/fork.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/fork.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/ld.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/ld.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/ldi.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/ldi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/lfork.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/lfork.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/live.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/live.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/lld.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/lld.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/lldi.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/lldi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/or.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/or.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/st.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/st.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/sti.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/sti.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/sub.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/sub.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/xor.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/xor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/operations/zjmp.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/operations/zjmp.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +111,7 @@
       <workItem from="1582134320987" duration="5000" />
       <workItem from="1582178212066" duration="3556000" />
       <workItem from="1582216956483" duration="2999000" />
+      <workItem from="1582270300491" duration="10317000" />
     </task>
     <servers />
   </component>

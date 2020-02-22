@@ -104,4 +104,4 @@ add_executable(corewar
 		src/operations/and.c src/operations/fork.c src/operations/ldi.c
 		src/operations/lfork.c src/operations/lld.c src/operations/lldi.c
 		src/operations/or.c src/operations/sti.c src/operations/sub.c
-		src/operations/xor.c src/operations/zjmp.c)
+		src/operations/xor.c src/operations/zjmp.c src/operations/get_x.c)

@@ -19,12 +19,13 @@ void        sub(t_vm *vm, t_cursor *cursor)
 	int32_t     r2;
 	int32_t 	r3;
 
-	r1 = (int32_t)ft_memcpy(ft_memalloc(REG_SIZE), &vm->arena[cursor->pc + 1], REG_SIZE);
-	r2 = (int32_t)ft_memcpy(ft_memalloc(REG_SIZE), &vm->arena[cursor->pc + 1 + REG_SIZE], REG_SIZE);
-	r3 = (int32_t)ft_memcpy(ft_memalloc(REG_SIZE), &vm->arena[cursor->pc + 1 + 2 * REG_SIZE], REG_SIZE);
-	cursor->reg[r3 - 1] = cursor->reg[r1 - 1] - cursor->reg[r2 - 1];
+	cursor->step += (OP_CODE_LEN + ARG_CODE_LEN);
+	r1 = get_value(vm, cursor, 0, 0);
+	cursor->step += REG_LEN;
+	r2 = get_value(vm, cursor, 1, 0);
+	cursor->step += REG_LEN;
+	r3 = (int8_t)(vm->arena[get_address(cursor->pc + cursor->step)];
+	cursor->reg[r3 - 1] = r1 - r2;
 	cursor->carry = (cursor->reg[r3 - 1]) ? (0) : (1);
-	free(r1);
-	free(r2);
-	free(r3);
+	cursor->step += REG_LEN;
 }

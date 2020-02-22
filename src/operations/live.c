@@ -18,16 +18,15 @@ void    		live(t_vm *vm, t_cursor *cursor)
 	int32_t     arg;
 	t_player    *player;
 
+	cursor->step += OP_CODE_LEN;
     cursor->last_live = vm->cycles;
-    //cursor->reg[0] = ??
-    arg = (int32_t)ft_memcpy(ft_memalloc(DIR_SIZE), &vm->arena[cursor->pc], DIR_SIZE);
+    arg = get_value(vm, cursor, 0, 0);
     if (arg < 0 && arg >= (-1) * vm->players_num)
     {
         player = vm->players[((-1) * arg) - 1];
+		player->current_lives_num++;
         player->last_live = vm->cycles;
-        player->current_lives_num++;
         vm->last_alive = player;
     }
     vm->lives_num++;
-    free(arg);
 }
