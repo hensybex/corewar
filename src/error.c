@@ -6,7 +6,7 @@
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 13:09:27 by smanhack          #+#    #+#             */
-/*   Updated: 2020/02/01 17:35:28 by smanhack         ###   ########.fr       */
+/*   Updated: 2020/02/23 11:36:53 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	error(char *error, int line_num)
 {
-	ft_putstr(error);
-	if (line_num != -1)
+	ft_putstr_fd(error, 2);
+	if (line_num > 0)
 	{
-		ft_putstr(" in line");
-		ft_putnbr(line_num);
-		ft_putchar('\n');
+		ft_putstr_fd(" in line", 2);
+		ft_putnbr_fd(line_num, 2);
+		ft_putstr_fd("\n", 2);
 	}
-	exit(1);
+	else
+		ft_putstr_fd("\n", 2);
+	exit(0);
 }
 
 void	check_last_symbols_part(char *line)
