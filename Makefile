@@ -1,4 +1,16 @@
-NAME =			corewar
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/02/23 10:50:47 by smanhack          #+#    #+#              #
+#    Updated: 2020/02/23 10:51:28 by smanhack         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+VM_NAME =			corewar
 
 INC =			-I ./includes/ \
 				-I ./ft_printf/ \
@@ -36,14 +48,14 @@ LIST =			corewar \
 
 OBJ =			$(addprefix obj/, $(addsuffix .o, $(LIST)))
 
-all: $(NAME)
+all: $(VM_NAME)
 
 obj/%.o: src/%.c
 	@gcc $(FLAGS) -c $< -o $@ $(INC)
 
-$(NAME): obj $(OBJ)
+$(VM_NAME): obj $(OBJ)
 	@make -C ft_printf
-	@gcc $(OBJ) -o $(NAME) $(LIB)
+	@gcc $(OBJ) -o $(VM_NAME) $(LIB)
 
 obj:
 	@mkdir obj
