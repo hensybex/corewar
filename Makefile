@@ -6,7 +6,7 @@
 #    By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/23 10:50:47 by smanhack          #+#    #+#              #
-#    Updated: 2020/02/23 11:10:48 by smanhack         ###   ########.fr        #
+#    Updated: 2020/02/23 14:40:31 by smanhack         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,25 +27,29 @@ VM_LIST =		corewar \
 				parse \
 				help_func \
 				battle \
-				needs_rework \
-				op_add \
-				op_aff \
-				op_and \
-				op_fork \
-				op_ld \
-				op_ldi \
-				op_lfork \
-				op_live \
-				op_lld \
-				op_lldi \
-				op_or \
-				op_st \
-				op_sti \
-				op_sub \
-				op_xor \
-				op_zjmp \
+				work \
+				add \
+				aff \
+				and \
+				fork \
+				ld \
+				ldi \
+				lfork \
+				live \
+				lld \
+				lldi \
+				or \
+				st \
+				sti \
+				sub \
+				xor \
+				zjmp \
 				utils \
 				print_info \
+				battle_args \
+				battle_helper \
+				parce_helper \
+				parsing \
 
 ASM_LIST =		asm \
 				error \

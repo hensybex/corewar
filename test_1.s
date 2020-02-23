@@ -1,5 +1,5 @@
 .name		"Tima"
-.comment	"pidr"
+.comment	"MOLODEC"
 
 	live %1
 	fork %-10

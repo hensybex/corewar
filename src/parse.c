@@ -6,48 +6,11 @@
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 10:29:58 by smanhack          #+#    #+#             */
-/*   Updated: 2020/02/23 10:30:00 by smanhack         ###   ########.fr       */
+/*   Updated: 2020/02/23 14:31:31 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/corewar.h"
-
-void		add_player(t_player **list, t_player *new)
-{
-	t_player *current;
-
-	if (list && new)
-	{
-		if (*list)
-		{
-			current = *list;
-			while (current->next)
-				current = current->next;
-			current->next = new;
-		}
-		else
-			*list = new;
-	}
-}
-
-void		*mem_cpy(void *dst, const void *src, size_t n)
-{
-	char			*ptr1;
-	char			*ptr2;
-	unsigned int	i;
-
-	i = 0;
-	if (dst == src)
-		return (dst);
-	ptr1 = (char*)dst;
-	ptr2 = (char*)src;
-	while (i < n)
-	{
-		ptr1[n - i - 1] = ptr2[i];
-		i++;
-	}
-	return (dst);
-}
 
 int32_t		parse_4_byte(int fd)
 {
@@ -118,58 +81,6 @@ t_player	*parse_champion(char *str, int id)
 	return (player);
 }
 
-t_player	*find_player(t_player *list, int32_t id)
-{
-	t_player *player;
-
-	player = NULL;
-	if (id >= 1 && id <= MAX_PLAYERS)
-	{
-		player = list;
-		while (player)
-		{
-			if (player->id == id)
-				return (player);
-			player = player->next;
-		}
-	}
-	return (player);
-}
-
-void		update_players_id(t_player *list)
-{
-	t_player	*player;
-	int32_t		id;
-
-	id = 1;
-	player = list;
-	while (player)
-	{
-		if (player->id == 0)
-		{
-			while (find_player(list, id))
-				id++;
-			player->id = id;
-		}
-		player = player->next;
-	}
-}
-
-void		set_players(t_vm *vm, t_player *list)
-{
-	int32_t id;
-
-	id = 1;
-	update_players_id(list);
-	while (id <= vm->players_num)
-	{
-		if (!(vm->players[id - 1] = find_player(list, id)))
-			error("Что-то пошло не так в set_players");
-		id++;
-	}
-	vm->last_alive = vm->players[vm->players_num - 1];
-}
-
 void		parse_file(int *ac, char ***av, t_vm *vm, t_player **list)
 {
 	int32_t		id;
@@ -195,49 +106,4 @@ void		parse_file(int *ac, char ***av, t_vm *vm, t_player **list)
 		(*ac)--;
 		(*av)++;
 	}
-}
-
-void		parse_aff(int *ac, char ***av, t_vm *vm)
-{
-	vm->display_aff = 1;
-	(*ac)--;
-	(*av)++;
-}
-
-void		parse_dump(int *ac, char ***av, t_vm *vm)
-{
-	if (!vm->dump_print_mode && *ac >= 2 && ft_max_min_int(*(*av + 1)))
-	{
-		if ((vm->dump_cycle = ft_atoi(*(*av + 1))) < 0)
-			vm->dump_cycle = -1;
-		if (!ft_strcmp(**av, "-d"))
-			vm->dump_print_mode = 64;
-		else
-			vm->dump_print_mode = 32;
-		(*ac) -= 2;
-		(*av) += 2;
-	}
-	else
-		error("Not valid -dump/-d arg");
-}
-
-void		parse_corewar_args(int ac, char **av, t_vm *vm)
-{
-	t_player *list;
-
-	list = NULL;
-	while (ac >= 1)
-	{
-		if (!ft_strcmp(*av, "-dump") || !ft_strcmp(*av, "-d"))
-			parse_dump(&ac, &av, vm);
-		else if (!ft_strcmp(*av, "-n") || is_cor(*av))
-			parse_file(&ac, &av, vm, &list);
-		else if (!ft_strcmp(*av, "-a"))
-			parse_aff(&ac, &av, vm);
-		else
-			error("Error arg");
-	}
-	if (vm->players_num < 1 || vm->players_num > MAX_PLAYERS)
-		error("Error arg");
-	set_players(vm, list);
 }

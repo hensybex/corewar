@@ -6,7 +6,7 @@
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 10:31:36 by smanhack          #+#    #+#             */
-/*   Updated: 2020/02/23 10:31:38 by smanhack         ###   ########.fr       */
+/*   Updated: 2020/02/23 14:57:13 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,22 @@ typedef struct	s_op
 	void		(*func)(t_vm *, t_cursor *);
 
 }				t_op;
-
-void			op_live(t_vm *vm, t_cursor *pc);
-void			op_ld(t_vm *vm, t_cursor *pc);
-void			op_st(t_vm *vm, t_cursor *pc);
-void			op_add(t_vm *vm, t_cursor *pc);
-void			op_sub(t_vm *vm, t_cursor *pc);
-void			op_and(t_vm *vm, t_cursor *cursor);
-void			op_or(t_vm *vm, t_cursor *cursor);
-void			op_xor(t_vm *vm, t_cursor *cursor);
-void			op_zjmp(t_vm *vm, t_cursor *cursor);
-void			op_ldi(t_vm *vm, t_cursor *cursor);
-void			op_sti(t_vm *vm, t_cursor *cursor);
-void			op_fork(t_vm *vm, t_cursor *cursor);
-void			op_lld(t_vm *vm, t_cursor *cursor);
-void			op_lldi(t_vm *vm, t_cursor *cursor);
-void			op_lfork(t_vm *vm, t_cursor *cursor);
-void			op_aff(t_vm *vm, t_cursor *cursor);
+void			live(t_vm *vm, t_cursor *pc);
+void			ld(t_vm *vm, t_cursor *pc);
+void			st(t_vm *vm, t_cursor *pc);
+void			add(t_vm *vm, t_cursor *pc);
+void			sub(t_vm *vm, t_cursor *pc);
+void			and(t_vm *vm, t_cursor *cursor);
+void			or(t_vm *vm, t_cursor *cursor);
+void			xor(t_vm *vm, t_cursor *cursor);
+void			zjmp(t_vm *vm, t_cursor *cursor);
+void			ldi(t_vm *vm, t_cursor *cursor);
+void			sti(t_vm *vm, t_cursor *cursor);
+void			fork_1(t_vm *vm, t_cursor *cursor);
+void			lld(t_vm *vm, t_cursor *cursor);
+void			lldi(t_vm *vm, t_cursor *cursor);
+void			lfork(t_vm *vm, t_cursor *cursor);
+void			aff(t_vm *vm, t_cursor *cursor);
 
 static t_op		g_op[16] = {
 	{
@@ -61,7 +60,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 4,
 		.cycles = 10,
-		.func = &op_live
+		.func = &live
 	},
 	{
 		.name = "ld",
@@ -72,7 +71,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 5,
-		.func = &op_ld
+		.func = &ld
 	},
 	{
 		.name = "st",
@@ -83,7 +82,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 4,
 		.cycles = 5,
-		.func = &op_st
+		.func = &st
 	},
 	{
 		.name = "add",
@@ -94,7 +93,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 10,
-		.func = &op_add
+		.func = &add
 	},
 	{
 		.name = "sub",
@@ -105,7 +104,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 10,
-		.func = &op_sub
+		.func = &sub
 	},
 	{
 		.name = "and",
@@ -116,7 +115,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 6,
-		.func = &op_and
+		.func = &and
 	},
 	{
 		.name = "or",
@@ -127,7 +126,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 6,
-		.func = &op_or
+		.func = &or
 	},
 	{
 		.name = "xor",
@@ -138,7 +137,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 6,
-		.func = &op_xor
+		.func = &xor
 	},
 	{
 		.name = "zjmp",
@@ -149,7 +148,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 20,
-		.func = &op_zjmp
+		.func = &zjmp
 	},
 	{
 		.name = "ldi",
@@ -160,7 +159,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 25,
-		.func = &op_ldi
+		.func = &ldi
 	},
 	{
 		.name = "sti",
@@ -171,7 +170,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 25,
-		.func = &op_sti
+		.func = &sti
 	},
 	{
 		.name = "fork",
@@ -182,7 +181,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 800,
-		.func = &op_fork
+		.func = &fork_1
 	},
 	{
 		.name = "lld",
@@ -193,7 +192,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 4,
 		.cycles = 10,
-		.func = &op_lld
+		.func = &lld
 	},
 	{
 		.name = "lldi",
@@ -204,7 +203,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 1,
 		.t_dir_size = 2,
 		.cycles = 50,
-		.func = &op_lldi
+		.func = &lldi
 	},
 	{
 		.name = "lfork",
@@ -215,7 +214,7 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 2,
 		.cycles = 1000,
-		.func = &op_lfork
+		.func = &lfork
 	},
 	{
 		.name = "aff",
@@ -226,12 +225,11 @@ static t_op		g_op[16] = {
 		.modify_carry = 0,
 		.t_dir_size = 4,
 		.cycles = 2,
-		.func = &op_aff
+		.func = &aff
 	}
 };
 
 t_cursor		*duplicate_cursor(t_cursor *cursor, int32_t addr);
-void			parse_types_code(t_vm *vm, t_cursor *cursor, t_op *op);
 int				are_args_valid(t_cursor *cursor, t_vm *vm, t_op *op);
 int				are_args_types_valid(t_cursor *cursor, t_op *op);
 uint32_t		calc_step(t_cursor *cursor, t_op *op);
@@ -243,4 +241,7 @@ void			byte_4_to_bytecode(uint8_t *arena,
 									int32_t addr,
 									int32_t value,
 									int32_t size);
+int				are_args_types_valid(t_cursor *cursor, t_op *op);
+void			parse_types_code(t_vm *vm, t_cursor *cursor, t_op *op);
+
 #endif

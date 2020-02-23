@@ -6,7 +6,7 @@
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 10:31:52 by smanhack          #+#    #+#             */
-/*   Updated: 2020/02/23 10:31:58 by smanhack         ###   ########.fr       */
+/*   Updated: 2020/02/23 14:59:19 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # define DIR_CODE				2
 # define IND_CODE				3
 
-# define MAX_ARGS_NUMBER		4
-# define MAX_PLAYERS			4
+# define MAX_ARGS_NUMBER		40
+# define MAX_PLAYERS			40
 # define MEM_SIZE				(4 * 1024)
 # define IDX_MOD				(MEM_SIZE / 8)
 # define CHAMP_MAX_SIZE			(MEM_SIZE / 6)
