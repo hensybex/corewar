@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_aff.c                                           :+:      :+:    :+:   */
+/*   ft_rainbow.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 11:59:33 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/23 10:19:35 by smanhack         ###   ########.fr       */
+/*   Created: 2019/07/30 18:21:00 by smanhack          #+#    #+#             */
+/*   Updated: 2019/07/31 16:13:57 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar_op.h"
+#ifndef FT_RAINBOW_H
+# define FT_RAINBOW_H
 
-void	op_aff(t_vm *vm, t_cursor *cursor)
+typedef struct		s_rainbow
 {
-	int32_t	r_id;
-	int32_t	value;
+	char			*color;
+	char			*background;
+	char			*attributes;
 
-	cursor->step += (OP_CODE_LEN + ARGS_CODE_LEN);
-	r_id = get_byte(vm, cursor->pc, cursor->step);
-	value = cursor->reg[INDEX(r_id)];
-	cursor->step += REG_LEN;
-	if (vm->display_aff)
-		ft_printf("Aff: %c\n", (char)value);
-}
+}					t_rainbow;
+
+#endif

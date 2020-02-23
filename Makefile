@@ -1,11 +1,11 @@
 NAME =			corewar
 
 INC =			-I ./includes/ \
-				-I ./libft/ \
+				-I ./ft_printf/ \
 
-LIB =			-L ./libft -lft
+LIB =			-L ./ft_printf -lftprintf
 
-FLAGS = 		-O3 #-Wall -Wextra -Werror
+FLAGS = 		-O3 -Wall -Wextra -Werror
 
 LIST =			corewar \
 				error \
@@ -33,6 +33,7 @@ LIST =			corewar \
 				op_xor \
 				op_zjmp \
 				utils \
+				print_info \
 
 OBJ =			$(addprefix obj/, $(addsuffix .o, $(LIST)))
 
@@ -42,18 +43,18 @@ obj/%.o: src/%.c
 	@gcc $(FLAGS) -c $< -o $@ $(INC)
 
 $(NAME): obj $(OBJ)
-	@make -C libft
+	@make -C ft_printf
 	@gcc $(OBJ) -o $(NAME) $(LIB)
 
 obj:
 	@mkdir obj
 
 clean:
-	@make -C libft clean
+	@make -C ft_printf clean
 	@rm -rf obj
 	
 fclean: clean
-	@make -C libft fclean
+	@make -C ft_printf fclean
 	@rm -f $(NAME)
 
 re: fclean all

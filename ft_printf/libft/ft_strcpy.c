@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_aff.c                                           :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 11:59:33 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/23 10:19:35 by smanhack         ###   ########.fr       */
+/*   Created: 2019/04/05 15:31:21 by smanhack          #+#    #+#             */
+/*   Updated: 2019/06/25 19:04:14 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar_op.h"
+#include "libft.h"
 
-void	op_aff(t_vm *vm, t_cursor *cursor)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int32_t	r_id;
-	int32_t	value;
+	char *d;
 
-	cursor->step += (OP_CODE_LEN + ARGS_CODE_LEN);
-	r_id = get_byte(vm, cursor->pc, cursor->step);
-	value = cursor->reg[INDEX(r_id)];
-	cursor->step += REG_LEN;
-	if (vm->display_aff)
-		ft_printf("Aff: %c\n", (char)value);
+	if (src == NULL)
+		return (NULL);
+	d = dst;
+	while (*src != '\0')
+	{
+		*d = *src;
+		d++;
+		src++;
+	}
+	*d = '\0';
+	return (dst);
 }

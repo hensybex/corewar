@@ -5,10 +5,10 @@ void		introduction(t_player **p, int32_t num)
 	int32_t i;
 
 	i = 0;
-	printf("Introducing contestants...\n");
+	ft_printf("Introducing contestants...\n");
 	while (i < num)
 	{
-		printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
+		ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
 		i + 1, p[i]->code_size, p[i]->name, p[i]->comment);
 		i++;
 	}
@@ -16,11 +16,11 @@ void		introduction(t_player **p, int32_t num)
 
 void		print_winner(t_vm *vm)
 {
-	printf("Contestant %d, \"%s\", has won !\n",
+	ft_printf("Contestant %d, \"%s\", has won !\n",
 	modul(vm->last_alive->id), vm->last_alive->name);
 }
 
-static void	free_players(t_player **players, int32_t players_num)
+void	free_players(t_player **players, int32_t players_num)
 {
 	int32_t i;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar_op.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
+/*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:52:17 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/16 14:40:05 by noobythetur      ###   ########.fr       */
+/*   Updated: 2020/02/23 10:20:06 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # define COREWAR_OP_H
 
-# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 # include "corewar.h"
 # include <stdio.h>
 # include "op.h"

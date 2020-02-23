@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_aff.c                                           :+:      :+:    :+:   */
+/*   ft_strsizeupdata.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 11:59:33 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/23 10:19:35 by smanhack         ###   ########.fr       */
+/*   Created: 2019/05/21 09:47:14 by noobythetur       #+#    #+#             */
+/*   Updated: 2019/05/23 15:47:11 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar_op.h"
+#include "libft.h"
 
-void	op_aff(t_vm *vm, t_cursor *cursor)
+char	*ft_strsizeupdata(char *src, size_t size, size_t add_size)
 {
-	int32_t	r_id;
-	int32_t	value;
+	char	*res;
 
-	cursor->step += (OP_CODE_LEN + ARGS_CODE_LEN);
-	r_id = get_byte(vm, cursor->pc, cursor->step);
-	value = cursor->reg[INDEX(r_id)];
-	cursor->step += REG_LEN;
-	if (vm->display_aff)
-		ft_printf("Aff: %c\n", (char)value);
+	res = ft_strnew(size + add_size);
+	if (src && res)
+	{
+		ft_strncpy(res, src, size);
+		if (add_size > 0)
+			ft_bzero(res + size, add_size);
+		ft_strdel(&src);
+		res[size + add_size + 1] = '\0';
+	}
+	return (res);
 }

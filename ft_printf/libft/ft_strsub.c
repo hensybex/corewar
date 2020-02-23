@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_aff.c                                           :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 11:59:33 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/23 10:19:35 by smanhack         ###   ########.fr       */
+/*   Created: 2019/04/11 21:51:42 by mriley            #+#    #+#             */
+/*   Updated: 2019/08/28 15:23:12 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar_op.h"
+#include "libft.h"
 
-void	op_aff(t_vm *vm, t_cursor *cursor)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int32_t	r_id;
-	int32_t	value;
+	char			*substr;
 
-	cursor->step += (OP_CODE_LEN + ARGS_CODE_LEN);
-	r_id = get_byte(vm, cursor->pc, cursor->step);
-	value = cursor->reg[INDEX(r_id)];
-	cursor->step += REG_LEN;
-	if (vm->display_aff)
-		ft_printf("Aff: %c\n", (char)value);
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (s)
+		if (substr)
+		{
+			ft_memcpy(substr, (s + start), len);
+			substr[len] = 0;
+			return (substr);
+		}
+	return (0);
 }

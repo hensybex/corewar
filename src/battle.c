@@ -131,14 +131,14 @@ void		print_arena(uint8_t *arena, int print_mode)
 	i = 0;
 	while (i < MEM_SIZE)
 	{
-		printf("%.4p : ", i);
+		ft_printf("%.4p : ", i);
 		j = 0;
 		while (j < print_mode)
 		{
-			printf("%.2x ", arena[i + j]);
+			ft_printf("%.2x ", arena[i + j]);
 			j++;
 		}
-		printf("\n");
+		ft_printf("\n");
 		i += print_mode;
 	}
 }

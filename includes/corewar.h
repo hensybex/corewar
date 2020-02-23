@@ -1,7 +1,7 @@
 #ifndef COREWAR_H
 # define COREWAR_H
 
-# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 # include "op.h"
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -46,4 +46,6 @@ int32_t					calc_addr(int32_t addr);
 void					add_cursorr(t_cursor **list, t_cursor *new);
 void					introduction(t_player **p, int32_t num);
 void					print_winner(t_vm *vm);
+void					free_players(t_player **players, int32_t players_num);
+
 #endif

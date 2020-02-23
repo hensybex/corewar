@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_aff.c                                           :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 11:59:33 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/23 10:19:35 by smanhack         ###   ########.fr       */
+/*   Created: 2019/08/23 13:40:45 by smanhack          #+#    #+#             */
+/*   Updated: 2019/10/29 13:16:57 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar_op.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	op_aff(t_vm *vm, t_cursor *cursor)
+# define BUFF_SIZE 100
+# include <libc.h>
+# include "libft.h"
+
+typedef struct		s_file
 {
-	int32_t	r_id;
-	int32_t	value;
+	int				fd;
+	char			*line;
+}					t_file;
 
-	cursor->step += (OP_CODE_LEN + ARGS_CODE_LEN);
-	r_id = get_byte(vm, cursor->pc, cursor->step);
-	value = cursor->reg[INDEX(r_id)];
-	cursor->step += REG_LEN;
-	if (vm->display_aff)
-		ft_printf("Aff: %c\n", (char)value);
-}
+int					get_next_line(const int fd, char **line);
+
+#endif
