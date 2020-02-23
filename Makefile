@@ -10,7 +10,6 @@ FLAGS = 		-O3 -Wall -Wextra -Werror
 LIST =			corewar \
 				error \
 				init_cursors \
-				info \
 				init \
 				parse \
 				help_func \

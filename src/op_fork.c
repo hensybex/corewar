@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_fork.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
+/*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 17:49:17 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/16 11:42:22 by noobythetur      ###   ########.fr       */
+/*   Created: 2020/02/23 10:31:14 by smanhack          #+#    #+#             */
+/*   Updated: 2020/02/23 10:31:15 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

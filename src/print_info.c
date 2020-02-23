@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_info.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/23 10:29:54 by smanhack          #+#    #+#             */
+/*   Updated: 2020/02/23 10:34:14 by smanhack         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/corewar.h"
 
 void		introduction(t_player **p, int32_t num)
@@ -20,7 +32,7 @@ void		print_winner(t_vm *vm)
 	modul(vm->last_alive->id), vm->last_alive->name);
 }
 
-void	free_players(t_player **players, int32_t players_num)
+void		free_players(t_player **players, int32_t players_num)
 {
 	int32_t i;
 

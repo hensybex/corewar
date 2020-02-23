@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
+/*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:33:19 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/16 14:40:05 by noobythetur      ###   ########.fr       */
+/*   Created: 2020/02/23 10:29:47 by smanhack          #+#    #+#             */
+/*   Updated: 2020/02/23 10:29:51 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

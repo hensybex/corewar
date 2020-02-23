@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_live.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noobytheturtle <noobytheturtle@student.    +#+  +:+       +#+        */
+/*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 20:23:16 by ablizniu          #+#    #+#             */
-/*   Updated: 2020/02/16 12:02:11 by noobythetur      ###   ########.fr       */
+/*   Created: 2020/02/23 10:30:54 by smanhack          #+#    #+#             */
+/*   Updated: 2020/02/23 10:30:55 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
