@@ -6,7 +6,7 @@
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 15:20:40 by smanhack          #+#    #+#             */
-/*   Updated: 2019/09/17 13:02:14 by smanhack         ###   ########.fr       */
+/*   Updated: 2020/02/01 17:51:16 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_strdeljoin(char *s1, char *s2);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -57,7 +58,7 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 void				ft_striter(char *s, void (*f)(char *));
-char				*ft_itoa(int n);
+char				*ft_itoa(long long n);
 char				*ft_strmap(char const *s, char (*f)(char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -85,10 +86,10 @@ size_t				ft_number_words(char const *s, char c);
 char				**ft_freesplit(char **p, size_t i);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_ll(long long n);
-int					ft_atoi(const char *str);
+long long			ft_atoi(const char *str);
 char				*ft_strjoin(char const *s1, char const *s2);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
-void				ft_putnbr(int n);
+void				ft_putnbr(long long n);
 char				*ft_itoa_base_uintmax_t(uintmax_t value, int base);
 char				*ft_itoa_intmax_t(intmax_t n);
 char				*ft_itoa_base_size_t(size_t value, int base);

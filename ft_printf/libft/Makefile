@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+         #
+#    By: medesmon <medesmon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 18:27:40 by smanhack          #+#    #+#              #
-#    Updated: 2019/10/29 12:46:45 by smanhack         ###   ########.fr        #
+#    Updated: 2020/01/17 17:11:36 by medesmon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,8 @@ LIST =			ft_atoi \
 				ft_itoa_intmax_t \
 				ft_itoa_ssize_t \
 				ft_is_space \
-				ft_strndup
+				ft_strndup \
+				ft_strdeljoin \
 
 FLAGS = -Wall -Wextra -Werror
 

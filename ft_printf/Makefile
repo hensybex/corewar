@@ -108,7 +108,8 @@ LIST_LIB =		ft_atoi \
 				ft_itoa_intmax_t \
 				ft_itoa_ssize_t \
 				ft_is_space \
-				ft_strndup
+				ft_strndup \
+				ft_strdeljoin \
 
 OBJ_LIB = $(addprefix libft/obj/, $(addsuffix .o, $(LIST_LIB)))
 

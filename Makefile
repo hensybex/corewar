@@ -6,11 +6,12 @@
 #    By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/23 10:50:47 by smanhack          #+#    #+#              #
-#    Updated: 2020/02/23 10:51:28 by smanhack         ###   ########.fr        #
+#    Updated: 2020/02/23 11:10:48 by smanhack         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 VM_NAME =			corewar
+ASM_NAME =			asm
 
 INC =			-I ./includes/ \
 				-I ./ft_printf/ \
@@ -19,8 +20,8 @@ LIB =			-L ./ft_printf -lftprintf
 
 FLAGS = 		-O3 -Wall -Wextra -Werror
 
-LIST =			corewar \
-				error \
+VM_LIST =		corewar \
+				error_vm \
 				init_cursors \
 				init \
 				parse \
@@ -46,16 +47,46 @@ LIST =			corewar \
 				utils \
 				print_info \
 
-OBJ =			$(addprefix obj/, $(addsuffix .o, $(LIST)))
+ASM_LIST =		asm \
+				error \
+				parser \
+				command_search \
+				label_search \
+				label_processing \
+				label_converter \
+				to_asm_code \
+				file \
+				checks \
+				add_arg \
+				memory_clearing \
+				command_1 \
+				command_2 \
+				command_3 \
+				command_4 \
+				is_1 \
+				is_2 \
+				skip \
+				search_name \
+				search_comment \
+				sizing_1 \
+				sizing_2 \
+				garbage_collector \
 
-all: $(VM_NAME)
+VM_OBJ =			$(addprefix obj/, $(addsuffix .o, $(VM_LIST)))
+ASM_OBJ =			$(addprefix obj/, $(addsuffix .o, $(ASM_LIST)))
+
+all: $(VM_NAME) $(ASM_NAME)
 
 obj/%.o: src/%.c
 	@gcc $(FLAGS) -c $< -o $@ $(INC)
 
-$(VM_NAME): obj $(OBJ)
+$(VM_NAME): obj $(VM_OBJ)
 	@make -C ft_printf
-	@gcc $(OBJ) -o $(VM_NAME) $(LIB)
+	@gcc $(VM_OBJ) -o $(VM_NAME) $(LIB)
+
+$(ASM_NAME): obj $(ASM_OBJ)
+	@make -C ft_printf
+	@gcc $(ASM_OBJ) -o $(ASM_NAME) $(LIB)
 
 obj:
 	@mkdir obj
@@ -66,7 +97,8 @@ clean:
 	
 fclean: clean
 	@make -C ft_printf fclean
-	@rm -f $(NAME)
+	@rm -f $(VM_NAME)
+	@rm -f $(ASM_NAME)
 
 re: fclean all
 

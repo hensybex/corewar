@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smanhack <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: medesmon <medesmon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:26:35 by smanhack          #+#    #+#             */
-/*   Updated: 2019/04/07 11:26:39 by smanhack         ###   ########.fr       */
+/*   Updated: 2020/01/24 20:16:21 by medesmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int		i;
-	char	fl;
-	long	res;
-	long	buf;
+	int			i;
+	char		fl;
+	long long	res;
+	long long	buf;
 
 	fl = 0;
 	i = 0;
@@ -36,5 +36,5 @@ int		ft_atoi(const char *str)
 	}
 	if (fl == 1)
 		res = -res;
-	return ((int)res);
+	return ((long long)res);
 }

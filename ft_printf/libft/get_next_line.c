@@ -5,121 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 15:07:06 by smanhack          #+#    #+#             */
-/*   Updated: 2019/10/29 13:17:04 by smanhack         ###   ########.fr       */
+/*   Created: 2019/01/21 04:23:01 by medesmon          #+#    #+#             */
+/*   Updated: 2020/01/31 15:28:38 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+#include "libft.h"
 
-static t_list	*ft_give_lst(t_list **all_fd, int fd)
+static size_t	ft_strclen(const char *s, int c)
 {
-	t_list	*buff;
-	t_file	line_fd;
+	size_t	i;
 
-	line_fd.fd = fd;
-	if (!(*all_fd))
-	{
-		*all_fd = ft_lstnew(&line_fd, sizeof(line_fd));
-		((t_file *)(*all_fd)->content)->line = ft_strnew(0);
-		return (*all_fd);
-	}
-	buff = *all_fd;
-	while (buff->next && ((t_file *)buff->content)->fd != line_fd.fd)
-		buff = buff->next;
-	if (((t_file *)buff->content)->fd == fd)
-		return (buff);
-	buff->next = ft_lstnew(&line_fd, sizeof(line_fd));
-	((t_file *)(buff->next)->content)->line = ft_strnew(0);
-	return (buff->next);
+	i = 0;
+	while (s[i] != '\0' && s[i] != c)
+		i++;
+	return (i);
 }
 
-static int		ft_lst_free(t_list **all_fd, int fd)
+static char		*ft_strdel1join(char *s1, char *s2)
 {
-	t_list	*tmp;
-	t_list	*buf;
+	char			*mem;
+	int				len;
 
-	tmp = *all_fd;
-	if (((t_file *)tmp->content)->fd == fd)
+	if (!s1 || !s2)
+		return (0);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	mem = (char *)malloc(sizeof(*mem) * len);
+	if (mem == NULL)
+		return (NULL);
+	ft_strcpy(mem, s1);
+	ft_strcat(mem, s2);
+	ft_strdel(&s1);
+	return (mem);
+}
+
+static int		divide_tmp(char **line,
+		char *fd_lines[FD_MAX_NUM], char **tmp, int fd)
+{
+	int		len;
+
+	if (!**tmp)
 	{
-		free(((t_file *)(tmp)->content)->line);
-		free((tmp)->content);
-		*all_fd = tmp->next;
-		free(tmp);
+		ft_strdel(tmp);
 		return (0);
 	}
-	while (((t_file *)tmp->next->content)->fd != fd)
-		tmp = tmp->next;
-	if (tmp)
-	{
-		buf = tmp->next;
-		tmp->next = buf->next;
-		free(((t_file *)(buf)->content)->line);
-		free((buf)->content);
-		free(buf);
-	}
-	return (0);
-}
-
-static t_list	*ft_find_fd(t_list **all_fd, int fd)
-{
-	t_list *buff;
-
-	buff = *all_fd;
-	while (((t_file *)buff->content)->fd != fd)
-		buff = buff->next;
-	return (buff);
-}
-
-static int		ft_line(t_list **all_fd, char **line, int fd)
-{
-	char	*buf;
-	t_file	*buf_lst;
-	size_t	len;
-	char	*buf_str;
-
-	buf_lst = (t_file *)ft_find_fd(all_fd, fd)->content;
-	if (*(buf_lst->line) == '\0')
-		return (ft_lst_free(all_fd, fd));
-	len = ft_strlen(buf_lst->line);
-	if ((buf_str = ft_strchr(buf_lst->line, '\n')) != NULL)
-	{
-		*buf_str = '\0';
-		*line = ft_strdup(buf_lst->line);
-		buf = ft_strdup(buf_str + 1);
-		free(buf_lst->line);
-		buf_lst->line = ft_strdup(buf);
-		free(buf);
-	}
+	len = ft_strclen(*tmp, '\n');
+	*line = ft_strsub(*tmp, 0, len);
+	if (!(tmp[0][len]))
+		fd_lines[fd] = ft_strnew(0);
 	else
 	{
-		*line = ft_strdup((buf_lst)->line);
-		ft_lst_free(all_fd, fd);
+		fd_lines[fd] =
+			ft_strsub(*tmp, len + 1, ft_strlen(*tmp + len + 1));
+		if (!fd_lines[fd])
+			return (-1);
 	}
+	ft_strdel(tmp);
 	return (1);
 }
 
 int				get_next_line(const int fd, char **line)
 {
-	char			buf[BUFF_SIZE + 1];
-	int				ref;
-	static t_list	*all_fd;
-	t_file			*buf_lst;
-	char			*tmp;
+	char		*tmp;
+	char		buff[BUFF_SIZE + 1];
+	ssize_t		ret;
+	static char	*fd_lines[FD_MAX_NUM];
 
-	if (fd < 0 || !line || BUFF_SIZE < 1 ||
-	BUFF_SIZE >= 10000000 || read(fd, buf, 0) < 0)
+	if (!line || BUFF_SIZE <= 0 || fd < 0 || fd > FD_MAX_NUM - 1 ||
+			(ret = read(fd, buff, 0)) < 0)
 		return (-1);
-	buf_lst = (t_file *)ft_give_lst(&all_fd, fd)->content;
-	while (ft_strchr(buf_lst->line, '\n') == NULL &&
-	(ref = read(fd, buf, BUFF_SIZE)))
-	{
-		buf[ref] = '\0';
-		tmp = ft_strjoin(buf_lst->line, buf);
-		free(buf_lst->line);
-		buf_lst->line = ft_strdup(tmp);
-		free(tmp);
-	}
-	return (ft_line(&all_fd, line, fd));
+	if (fd_lines[fd])
+		tmp = ft_strdup(fd_lines[fd]);
+	else
+		tmp = ft_strnew(0);
+	ft_strdel(&fd_lines[fd]);
+	if (!ft_strchr(tmp, '\n'))
+		while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
+		{
+			buff[ret] = '\0';
+			tmp = ft_strdel1join(tmp, buff);
+			if (ft_strchr(buff, '\n'))
+				break ;
+		}
+	if (ret < 0 || !tmp)
+		return (-1);
+	return (divide_tmp(line, fd_lines, &tmp, fd));
 }

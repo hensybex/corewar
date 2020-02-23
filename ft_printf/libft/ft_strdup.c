@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smanhack <smanhack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 20:48:44 by mriley            #+#    #+#             */
-/*   Updated: 2019/08/28 15:22:55 by smanhack         ###   ########.fr       */
+/*   Created: 2019/09/20 04:38:49 by medesmon          #+#    #+#             */
+/*   Updated: 2020/01/31 15:26:51 by smanhack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,20 @@
 
 char	*ft_strdup(const char *src)
 {
-	size_t		len;
-	char		*str;
+	int		i;
+	int		len;
+	char	*str;
 
-	len = ft_strlen(src);
-	str = ft_strsub(src, 0, len);
+	len = 0;
+	while (src[len])
+		len++;
+	str = (char*)malloc(sizeof(*str) * (len + 1));
+	i = 0;
+	while (i < len)
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }
